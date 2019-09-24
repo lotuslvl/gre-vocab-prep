@@ -1,0 +1,21 @@
+{
+  "name": "gre-vocab-prep",
+  "version": "1.0.0",
+  "description": "Realistic GRE vocab game that provides realistic questions in a fun and engaging way.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotuslvl/gre-vocab-prep.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lotuslvl/gre-vocab-prep/issues"
+  },
+  "homepage": "https://github.com/lotuslvl/gre-vocab-prep#readme"
+}
