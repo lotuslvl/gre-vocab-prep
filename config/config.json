@@ -4,8 +4,7 @@
     "password": "ds1q5lsdxn119wy0",
     "database": "mzpo44jd0nzuqi8t",
     "host": "i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
@@ -24,3 +23,4 @@
     "operatorsAliases": false
   }
 }
+
