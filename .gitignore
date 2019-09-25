@@ -1,5 +1,6 @@
 node_modules
 package-lock.json
+.env
 
 # this makes it so you are not uploading these node modules
 # this is Allan pushing to master
