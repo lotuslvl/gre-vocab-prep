@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/lotuslvl/gre-vocab-prep/issues"
   },
-  "homepage": "https://github.com/lotuslvl/gre-vocab-prep#readme"
+  "homepage": "https://github.com/lotuslvl/gre-vocab-prep#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.19.0"
+  }
 }

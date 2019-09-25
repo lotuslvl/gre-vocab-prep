@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       password: DataTypes.STRING,
       name: DataTypes.STRING,
       email: DataTypes.STRING,
-      progress: DataTypes.ARRAY(dataTypes.INTEGER),
+      progress: DataTypes.ARRAY(DataTypes.INTEGER),
       gre_test_date: DataTypes.DATEONLY,
     
     });
