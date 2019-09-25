@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "j07yjw4knczmsqs1",
-    "password": "ds1q5lsdxn119wy0",
-    "database": "mzpo44jd0nzuqi8t",
-    "host": "i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "greprep_db",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
@@ -15,12 +15,11 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "username": "j07yjw4knczmsqs1",
+    "password": "ds1q5lsdxn119wy0",
+    "database": "mzpo44jd0nzuqi8t",
+    "host": "i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
   }
 }
 
