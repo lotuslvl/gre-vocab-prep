@@ -1,4 +1,4 @@
 -- Drops the blogger if it exists currently --
-DROP DATABASE IF EXISTS mzpo44jd0nzuqi8t;
+DROP DATABASE IF EXISTS greprep_db;
 -- Creates the "blogger" database --
-CREATE DATABASE mzpo44jd0nzuqi8t;
+CREATE DATABASE greprep_db;
