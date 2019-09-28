@@ -4,8 +4,15 @@ $(document).ready(function(){
 
     //where we will store all the text completion questions from the database
     var textcompletionquestions = [];
+    //always has the items we pulled
+    var textcompletionquestions = []; 
+    //all the correct answer from teh database
+    var correctanswers=[];
+    //all the answers the user selects
+    var useranswers=[];
+    //checks which questions we are on currently
     var questioncounter=0;
-
+    //shows the start screen and hides other elements on the page
     function showStartScreen() {
         $("#start-screen").show();
         $("#what-to-expect").hide();
@@ -14,7 +21,7 @@ $(document).ready(function(){
         $("#question-result-display").hide();
         $("#test-result-display").hide();
     }
-
+    //shows the What to Expect slide and hides other elements on the page
     function showWhatToExpect() {
         $("#start-screen").hide();
         $("#what-to-expect").show();
@@ -23,7 +30,7 @@ $(document).ready(function(){
         $("#question-result-display").hide();
         $("#test-result-display").hide();
     }
-         
+    //shows the Show Tips slide and hides other elements on the page     
     function showTips() {
         $("#start-screen").hide();
         $("#what-to-expect").hide();
@@ -32,7 +39,7 @@ $(document).ready(function(){
         $("#question-result-display").hide();
         $("#test-result-display").hide();
     }
-
+    //shows the Questions
     function showQuestion() {
         $("#start-screen").hide();
         $("#what-to-expect").hide();
@@ -62,7 +69,7 @@ $(document).ready(function(){
     }   
 
     function displayQuestions() {
-        
+
         $("#practice-question").text(textcompletionquestions[questioncounter].question)
         $("#A").text(textcompletionquestions[questioncounter].correctanswer1);
         $("#B").text(textcompletionquestions[questioncounter].wronganswerA1);
@@ -94,18 +101,42 @@ $(document).ready(function(){
     }
 
     
+    function getCorrectAnswers() {
+        for (var i;i<=textcompletionquestions.length;i++) {
+            
+            //fill correct questions array with answers after doinga  check to see if the answers exist
+            if(typeof textcompletionquestions[i].correctanswer1  !== 'undefined' && textcompletionquestions[i].correctanswer1 !== null){
+                correctanswers.push(textcompletionquestions[i].correctanswer1 );
+            }
+        
+            if(typeof textcompletionquestions[i].correctanswer2  !== 'undefined'&& textcompletionquestions[i].correctanswer2  !== null){
+                correctanswers.push(textcompletionquestions[i].correctanswer2);
+            }
+        
+            if(typeof textcompletionquestions[i].correctanswer3 !== 'undefined' && textcompletionquestions[i].correctanswer3 !== null){
+                correctanswers.push(textcompletionquestions[i].correctanswer3);
+            }
+            
+            alert(JSON.stringify(correctanswers)+ "hi");
+        }
+    }
 
     //gets text completion questions from the database and stores it in an array
     function getTextCompletionQuestions() {
         console.log("getting questions");
         $.get("/api/textcompletionq", function(data) {
           textcompletionquestions = data;
-          displayQuestions();
+          textcompletionquestionsoriginal = data;
+          
+
+        //loop through questions to get the correct answers
+
+      displayQuestions();
         });
       }
 
-
       getTextCompletionQuestions();
+      getCorrectAnswers();
       showStartScreen();
 
 
@@ -126,6 +157,19 @@ $(document).ready(function(){
     
     //show the next question in the list
     $("#next-question").on("click",function() {
+
+
+        //save user answers in for final check after checking if they exist
+        useranswers.push($('input[name=set1]:checked', '#set-1').val());
+        
+        if (typeof $('input[name=set2]:checked', '#set-1').val() !== 'undefined' && $('input[name=set2]:checked', '#set-1').val() !== null) {
+        useranswers.push($('input[name=set2]:checked', '#set-2').val());
+        }
+
+        if (typeof $('input[name=set2]:checked', '#set-3').val() !== 'undefined' && $('input[name=set3]:checked', '#set-1').val() !== null) {
+        useranswers.push($('input[name=set3]:checked', '#set-3').val());
+        }
+        alert(useranswers);
         getTextCompletionQuestions();
     });
 
