@@ -3,7 +3,7 @@ $(document).ready(function(){
     //where we will store all the text completion questions from the database
     var textcompletionquestions = [];
     //always has the items we pulled
-    var textcompletionquestions = []; 
+    var textcompletionquestionsoriginal = []; 
     //all the correct answer from teh database
     var correctanswers=[];
     //all the answers the user selects
@@ -101,8 +101,22 @@ $(document).ready(function(){
     }
 
     
-    function getCorrectAnswers() {
-        for (var i;i<=textcompletionquestions.length;i++) {
+    
+    //gets text completion questions from the database and stores it in an array
+    function getTextCompletionQuestions() {
+    
+        $.get("/api/textcompletionq", function(data) {
+          textcompletionquestions = data;
+          textcompletionquestionsoriginal = data;
+          
+        //loop through questions to get the correct answers
+        displayQuestions();
+        });
+      }
+
+      function getCorrectAnswers() {
+
+        for (var i=0;i<=textcompletionquestions.length;i++) {
             
             //fill correct questions array with answers after doinga  check to see if the answers exist
             if(typeof textcompletionquestions[i].correctanswer1  !== 'undefined' && textcompletionquestions[i].correctanswer1 !== null){
@@ -121,20 +135,8 @@ $(document).ready(function(){
         }
     }
 
-    //gets text completion questions from the database and stores it in an array
-    function getTextCompletionQuestions() {
-        console.log("getting questions");
-        $.get("/api/textcompletionq", function(data) {
-          textcompletionquestions = data;
-          textcompletionquestionsoriginal = data;
-          
-        //loop through questions to get the correct answers
-        displayQuestions();
-        });
-      }
-
       getTextCompletionQuestions();
-      getCorrectAnswers();
+      //getCorrectAnswers();
       showStartScreen();
 
     //these are showing entry screens before the questions begin
@@ -162,7 +164,6 @@ $(document).ready(function(){
        console.log("still have questions to answer")
      }
     });
-
 
 
 
