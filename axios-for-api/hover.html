@@ -1,22 +1,104 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Question 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            background-color: yellowgreen;
+            color: white;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .textbox {
+            display: none;
+            width: 250px;
+            
+            background: white;
+            color: yellowgreen;
+            border-radius: 10px;
+            overflow: visible;
+
+
+        }
+
+        ul {
+            width: 130px;
+        }
+    </style>
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
 </head>
+
 <body>
     <h2> Question 1</h2>
     <ul>
-        <li id="1" value="happy">happy</li>
+        <li id="1" value="happy" class="answers">happy</li>
+        <div id="text1" class="textbox">Text in the box 1. here</div>
+
         <li id="2" value="sad">sad</li>
+        <div id="text2" class="textbox">Text in the box 2</div>
+
         <li id="3" value="tired">tired</li>
+        <div id="text3" class="textbox">Text in the box 3</div>
+
         <li id="4" value="exited">exited</li>
+        <div id="text4" class="textbox">Text in the box 4</div>
+
         <li id="5" value="fine">fine</li>
+        <div id="text5" class="textbox">Text in the box 5</div>
     </ul>
-    <script>console.log(document.getElementById("1").innerText)</script>
-    
+    <script>
+        // one
+        var e = document.getElementById('1');
+        e.onmouseover = function () {
+            document.getElementById('text1').style.display = 'block';
+        }
+        e.onmouseout = function () {
+            document.getElementById('text1').style.display = 'none';
+        }
+        // two
+        var e = document.getElementById('2');
+        e.onmouseover = function () {
+            document.getElementById('text2').style.display = 'block';
+        }
+        e.onmouseout = function () {
+            document.getElementById('text2').style.display = 'none';
+        }
+        // three
+        var e = document.getElementById('3');
+        e.onmouseover = function () {
+            document.getElementById('text3').style.display = 'block';
+        }
+        e.onmouseout = function () {
+            document.getElementById('text3').style.display = 'none';
+        }
+        // four
+        var e = document.getElementById('4');
+        e.onmouseover = function () {
+            document.getElementById('text4').style.display = 'block';
+        }
+        e.onmouseout = function () {
+            document.getElementById('text4').style.display = 'none';
+        }
+        // five
+        var e = document.getElementById('5');
+        e.onmouseover = function () {
+            document.getElementById('text5').style.display = 'block';
+        }
+        e.onmouseout = function () {
+            document.getElementById('text5').style.display = 'none';
+        }
+
+
+
+        // console.log(document.getElementById("1").innerText)
+    </script>
+
 </body>
+
 </html>
