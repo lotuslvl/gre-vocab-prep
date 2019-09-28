@@ -22,7 +22,7 @@
 
     </div>
 
-    <div class="test-container" id="what-to-expect">
+    <div class="test-container hideonload" id="what-to-expect">
     
         <h2 class="title" id="start-title"> What To Expect </h2>  
         <p class="description"> You will answer 20 questions. Each question includes a passage that has between 1 and 5 sentences with 1 to 3 blanks.</p>    
@@ -30,7 +30,7 @@
     
     </div>
 
-    <div class="test-container" id="tips">
+    <div class="test-container hideonload" id="tips" >
     
         <h2 class="title" id="start-title"> Tips for Success </h2>  
         <p class="description"> 1. Read the entire sentence. </p>   
@@ -43,7 +43,7 @@
     
     </div>   
     
-    <div class="test-container" id="question-display">
+    <div class="test-container hideonload" id="question-display" >
 
         <p class="question" id="practice-question"></p>
 
@@ -51,11 +51,11 @@
 
         <form class="answers" id="set-1">
 
-        <input type="radio" class="answer" id="Aradio" name="set1" value="A"> <label id="A" for="Aradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Bradio" name="set1" value="B"> <label id="B" for="Bradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Cradio" name="set1" value="C"> <label id="C" for="Cradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Dradio" name="set1" value="D"> <label id="D" for="Dradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Eradio" name="set1" value="E"> <label id="E" for="Eradio" value=""> </label> <br>
+        <input type="radio" class="answer" id="Aradio" name="set1" value="A"> <label class="answerval" id="A" for="Aradio" value=""> </label> <br>
+        <input type="radio" class="answer" id="Bradio" name="set1" value="B"> <label class="answerval" id="B" for="Bradio" value=""> </label> <br>
+        <input type="radio" class="answer" id="Cradio" name="set1" value="C"> <label class="answerval" id="C" for="Cradio" value=""> </label> <br>
+        <input type="radio" class="answer" id="Dradio" name="set1" value="D"> <label class="answerval" id="D" for="Dradio" value=""> </label> <br>
+        <input type="radio" class="answer" id="Eradio" name="set1" value="E"> <label class="answerval" id="E" for="Eradio" value=""> </label> <br>
 
 
     </form>
@@ -65,9 +65,9 @@
 
         <form class="answers" id="set-2">
 
-            <input type="radio" class="answer" id="A2radio" name="set2" value="A"> <label id="A2" for="A2radio" value=""> </label> <br>
-            <input type="radio" class="answer" id="B2radio" name="set2" value="B"> <label id="B2" for="B2radio" value=""> </label> <br>
-            <input type="radio" class="answer" id="C2radio" name="set2" value="C"> <label id="C2" for="C2radio" value=""> </label><br>
+            <input type="radio" class="answer" id="A2radio" name="set2" value="A"> <label class="answerval" id="A2" for="A2radio" value=""> </label> <br>
+            <input type="radio" class="answer" id="B2radio" name="set2" value="B"> <label class="answerval" id="B2" for="B2radio" value=""> </label> <br>
+            <input type="radio" class="answer" id="C2radio" name="set2" value="C"> <label class="answerval" id="C2" for="C2radio" value=""> </label><br>
         
         </form>
     </div>
@@ -77,9 +77,9 @@
 
         <form class="answers" id="set-3">
 
-            <input type="radio" class="answer" id="A3radio" name="set3" value="A"> <label id="A3" for="A3radio" value=""> </label>  <br>
-            <input type="radio" class="answer" id="B3radio" name="set3" value="B"> <label id="B3" for="B3radio" value=""> </label>  <br>
-            <input type="radio" class="answer" id="C3radio" name="set3" value="C"> <label id="C3" for="C3radio" value=""> </label> <br>
+            <input type="radio" class="answer" id="A3radio" name="set3" value="A"> <label class="answerval" id="A3" for="A3radio" value=""> </label> <br>
+            <input type="radio" class="answer" id="B3radio" name="set3" value="B"> <label class="answerval" id="B3" for="B3radio" value=""> </label>  <br>
+            <input type="radio" class="answer" id="C3radio" name="set3" value="C"> <label class="answerval" id="C3" for="C3radio" value=""> </label> <br>
         </form>
     </div>
 
@@ -87,7 +87,7 @@
 
     </div>
 
-    <div class="test-container" id="question-result-display">
+    <div class="test-container hideonload" id="question-result-display">
 
 
     <p class="result"></p>
@@ -95,7 +95,7 @@
 
     </div>
 
-    <div class="test-container" id="test-result-display">
+    <div class="test-container hideonload" id="test-result-display">
             
     <h2 class="finalscoreheader"> Final Score!</h2>
     <p class="finalscorenumber"></p>
@@ -111,20 +111,11 @@
 
 </body>
 
-<script> 
-//  $( ".answer" ).hover(
-
-//     alert("here it is")
-//   );
-
-$( "#A" )
-  .mouseover(function() {
-    console.log("it worked");
-  })
-  .mouseout(function() {
-      console.log("it stoped");
-
-   
-  });
-  </script>
 </html>
+
+<script>
+       
+           $(".hideonload").hide()
+   
+     </script>
+
