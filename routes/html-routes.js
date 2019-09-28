@@ -18,8 +18,8 @@ module.exports = function(app) {
   });
 
   // playerdashboard route loads playerdashboard.html
-  app.get("/playerdashboard", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/playerdashbaord.html"));
+  app.get("/textcompletionquizpractice", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/textcompletionquizpractice.html"));
   });
 
   // scoreboard route loads scoreboard.html
