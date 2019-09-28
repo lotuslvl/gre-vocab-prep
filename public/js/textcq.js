@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 
     //where we will store all the text completion questions from the database
@@ -13,6 +11,7 @@ $(document).ready(function(){
     //checks which questions we are on currently
     var questioncounter=0;
     //shows the start screen and hides other elements on the page
+
     function showStartScreen() {
         $("#start-screen").show();
         $("#what-to-expect").hide();
@@ -68,6 +67,7 @@ $(document).ready(function(){
         $("#test-result-display").show();
     }   
 
+    //display 1 question to the user from the list we received from the database
     function displayQuestions() {
 
         $("#practice-question").text(textcompletionquestions[questioncounter].question)
@@ -128,10 +128,8 @@ $(document).ready(function(){
           textcompletionquestions = data;
           textcompletionquestionsoriginal = data;
           
-
         //loop through questions to get the correct answers
-
-      displayQuestions();
+        displayQuestions();
         });
       }
 
@@ -139,13 +137,10 @@ $(document).ready(function(){
       getCorrectAnswers();
       showStartScreen();
 
-
-
-    //these are showing entry screens before the questions
+    //these are showing entry screens before the questions begin
     $("#next-page-okay").on("click",function() {
         showWhatToExpect();
     });
-
 
     $("#next-page-gotit").on("click",function() {
         showTips(); 
@@ -155,6 +150,22 @@ $(document).ready(function(){
         showQuestion(); 
     });
     
+    //check to see if the question was answered before enabling the next button
+    $('input[type=radio][class=answer]').change(function() {
+
+    if ($("input[name='set1']:checked").val()) {
+        //enable the next question button
+        $('#next-question').prop('disabled', false);
+        
+     }
+     else {
+       console.log("still have questions to answer")
+     }
+    });
+
+
+
+
     //show the next question in the list
     $("#next-question").on("click",function() {
 
@@ -171,6 +182,8 @@ $(document).ready(function(){
         }
         alert(useranswers);
         getTextCompletionQuestions();
+        //disable the button for the next question
+        $('#next-question').prop('disabled', true);
     });
 
 
