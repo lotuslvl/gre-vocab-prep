@@ -10,6 +10,8 @@ $(document).ready(function(){
     var useranswers=[];
     //checks which questions we are on currently
     var questioncounter=0;
+    //where we store the final score of the quiz
+    var score=0;
     //shows the start screen and hides other elements on the page
 
     function showStartScreen() {
@@ -72,16 +74,24 @@ $(document).ready(function(){
 
         $("#practice-question").text(textcompletionquestions[questioncounter].question)
         $("#A").text(textcompletionquestions[questioncounter].correctanswer1);
+        $("#Aradio").val(textcompletionquestions[questioncounter].correctanswer1);
         $("#B").text(textcompletionquestions[questioncounter].wronganswerA1);
+        $("#Bradio").val(textcompletionquestions[questioncounter].wronganswerA1);
         $("#C").text(textcompletionquestions[questioncounter].wronganswerB1);
+        $("#Cradio").val(textcompletionquestions[questioncounter].wronganswerB1);
         $("#D").text(textcompletionquestions[questioncounter].wronganswerC1);
+        $("#Dradio").val(textcompletionquestions[questioncounter].wronganswerC1);
         $("#E").text(textcompletionquestions[questioncounter].wronganswerD1);
+        $("#Eradio").val(textcompletionquestions[questioncounter].wronganswerD1);
 
         if (textcompletionquestions[questioncounter].correctanswer2) {
         $("#second-question-set").show();
         $("#A2").text(textcompletionquestions[questioncounter].correctanswer2);
+        $("#A2radio").val(textcompletionquestions[questioncounter].correctanswer2);
         $("#B2").text(textcompletionquestions[questioncounter].wronganswerA2);
+        $("#B2radio").val(textcompletionquestions[questioncounter].wronganswerA2);
         $("#C2").text(textcompletionquestions[questioncounter].wronganswerB2);
+        $("#C2radio").val(textcompletionquestions[questioncounter].wronganswerB2);
         }
         else{
         $("#second-question-set").hide();
@@ -90,8 +100,11 @@ $(document).ready(function(){
         if (textcompletionquestions[questioncounter].correctanswer3) {
         $("#third-question-set").show();
         $("#A3").text(textcompletionquestions[questioncounter].correctanswer3);
+        $("#A3radio").val(textcompletionquestions[questioncounter].correctanswer3);
         $("#B3").text(textcompletionquestions[questioncounter].wronganswerA3);
+        $("#B3radio").val(textcompletionquestions[questioncounter].wronganswerA3);
         $("#C3").text(textcompletionquestions[questioncounter].wronganswerB3);
+        $("#C3radio").val(textcompletionquestions[questioncounter].wronganswerB3);
         }
         else{
         $("#third-question-set").hide();
@@ -111,32 +124,47 @@ $(document).ready(function(){
           
         //loop through questions to get the correct answers
         displayQuestions();
+        getCorrectAnswers();
         });
       }
 
       function getCorrectAnswers() {
 
-        for (var i=0;i<=textcompletionquestions.length;i++) {
-            
+        for (var i=0;i<textcompletionquestions.length;i++) {
+        
             //fill correct questions array with answers after doinga  check to see if the answers exist
-            if(typeof textcompletionquestions[i].correctanswer1  !== 'undefined' && textcompletionquestions[i].correctanswer1 !== null){
+            if(typeof textcompletionquestions[i].correctanswer1  !== 'undefined' && typeof textcompletionquestions[i].correctanswer1 !== null && textcompletionquestions[i].correctanswer1 !== ""){
                 correctanswers.push(textcompletionquestions[i].correctanswer1 );
             }
         
-            if(typeof textcompletionquestions[i].correctanswer2  !== 'undefined'&& textcompletionquestions[i].correctanswer2  !== null){
+            if(typeof textcompletionquestions[i].correctanswer2  !== 'undefined'&& typeof textcompletionquestions[i].correctanswer2  !== null && textcompletionquestions[i].correctanswer2  !== ""){
                 correctanswers.push(textcompletionquestions[i].correctanswer2);
             }
         
-            if(typeof textcompletionquestions[i].correctanswer3 !== 'undefined' && textcompletionquestions[i].correctanswer3 !== null){
+            if(typeof textcompletionquestions[i].correctanswer3 !== 'undefined' && typeof textcompletionquestions[i].correctanswer3 !== null && textcompletionquestions[i].correctanswer3  !== ""){
                 correctanswers.push(textcompletionquestions[i].correctanswer3);
             }
             
-            alert(JSON.stringify(correctanswers)+ "hi");
         }
+
     }
 
+    function gradeQuiz() {
+
+        for(var i=0; i<correctanswers.length;i++){
+
+            if(correctanswers[i]===useranswers[i]) {
+                score++;
+            }
+        }
+
+        $("#finalscorenumber").text(score);
+        $("#numofquestions").text(correctanswers.length);
+        showFinalResult();
+    }
+
+      //start app  
       getTextCompletionQuestions();
-      //getCorrectAnswers();
       showStartScreen();
 
     //these are showing entry screens before the questions begin
@@ -173,19 +201,26 @@ $(document).ready(function(){
         //save user answers in for final check after checking if they exist
         useranswers.push($('input[name=set1]:checked', '#set-1').val());
         
-        if (typeof $('input[name=set2]:checked', '#set-1').val() !== 'undefined' && $('input[name=set2]:checked', '#set-1').val() !== null) {
+        if ( $("#second-question-set").is(":visible") ) {
         useranswers.push($('input[name=set2]:checked', '#set-2').val());
         }
 
-        if (typeof $('input[name=set2]:checked', '#set-3').val() !== 'undefined' && $('input[name=set3]:checked', '#set-1').val() !== null) {
+        if ($("#third-question-set").is(":visible")) {
         useranswers.push($('input[name=set3]:checked', '#set-3').val());
         }
-        alert(useranswers);
+
+        if(questioncounter<20){
         displayQuestions();
-        //disable the button for the next question
-        $('#next-question').prop('disabled', true);
-        //uncheck all answers
-        $('.answer').prop('checked', false);
+           //disable the button for the next question
+           $('#next-question').prop('disabled', true);
+           //uncheck all answers
+           $('.answer').prop('checked', false);
+        }
+
+        else{
+            gradeQuiz();
+        }
+     
     });
 
 
