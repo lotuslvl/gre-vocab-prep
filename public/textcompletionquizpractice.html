@@ -1,118 +1,158 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Practice Text Completion Prep</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src='js\textcq.js'></script>
-    
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+    <script src='./js/textcq.js'></script>
+
 </head>
+
 <body>
-<div class="practice-test-container">
+    <div class="practice-test-container">
 
-    <div class="test-container" id="start-screen">
-    
-    <h2 class="title" id="start-title"> Text Completion Practice </h2>  
-    <p class="description"> This is a practice test so you have an unlimited amount of time to complete it and hints.</p>   
-      
-    <button type="button" class="next-page" id="next-page-okay"> Okay!</button>
+        <div class="test-container" id="start-screen">
+
+            <h2 class="title" id="start-title"> Text Completion Practice </h2>
+            <p class="description"> This is a practice test so you have an unlimited amount of time to complete it and
+                hints.</p>
+
+            <button type="button" class="next-page" id="next-page-okay"> Okay!</button>
+
+        </div>
+
+        <div class="test-container hideonload" id="what-to-expect">
+
+            <h2 class="title" id="start-title"> What To Expect </h2>
+            <p class="description"> You will answer 20 questions. Each question includes a passage that has between 1
+                and 5 sentences with 1 to 3 blanks.</p>
+            <button type="button" class="next-page" id="next-page-gotit"> Got it!</button>
+
+        </div>
+
+        <div class="test-container hideonload" id="tips">
+
+            <h2 class="title" id="start-title"> Tips for Success </h2>
+            <p class="description"> 1. Read the entire sentence. </p>
+            <p class="description"> 2. Come up with your own answer. </p>
+            <p class="description"> 3. Identify signal words and phrases. </p>
+            <p class="description"> 4. Use process of elimination </p>
+            <p class="description"> 5. Read through the passage once you've chosen the answer. </p>
+
+            <button type="button" class="next-page" id="next-page-begin"> Begin!</button>
+
+        </div>
+
+        <div class="test-container hideonload" id="question-display">
+
+            <p class="question" id="practice-question"></p>
+
+            <p class="question" id="practice-question-1">I.</p>
+
+            <form class="answers" id="set-1">
+
+                <input type="radio" class="answer" id="Aradio" name="set1" value="A"> 
+                <div class="tooltip"> <label class="answerval" id="A" for="Aradio" value="">  </label>  <span class="tooltiptext">Hello World</span> </div> <br>
+                
+                <input type="radio" class="answer" id="Bradio" name="set1" value="B"> 
+                <div class="tooltip"> <label class="answerval" id="B" for="Bradio" value="">   </label> <span class="tooltiptext">Hello World</span> </div> <br>
+                
+                <input type="radio" class="answer" id="Cradio" name="set1" value="C"> 
+                <div class="tooltip"> <label class="answerval" id="C" for="Cradio" value=""> </label> <span class="tooltiptext">Hello World</span> </div> <br>
+
+                <input type="radio" class="answer" id="Dradio" name="set1" value="D">
+                <div class="tooltip">  <label class="answerval" id="D" for="Dradio" value="">   </label> <span class="tooltiptext">Hello World</span></div> <br>
+
+                <input type="radio" class="answer" id="Eradio" name="set1" value="E"> 
+                <div class="tooltip"> <label class="answerval" id="E" for="Eradio" value="">   </label> <span class="tooltiptext">Hello World</span></div> <br>
+               
+            </form>
+
+            <div id="second-question-set">
+                <p class="question" id="practice-question-2">II.</p>
+
+                <form class="answers" id="set-2">
+
+                    <input type="radio" class="answer" id="A2radio" name="set2" value="A"> 
+                    <div class="tooltip"> <label class="answerval" id="A2" for="A2radio" value="">  </label> <span class="tooltiptext">Hello World</span> </div> <br>
+                    
+                    <input type="radio" class="answer" id="B2radio" name="set2" value="B"> 
+                    <div class="tooltip">  <label class="answerval" id="B2" for="B2radio" value=""> </label> <span class="tooltiptext">Hello World</span> </div>  <br>
+
+                    <input type="radio" class="answer" id="C2radio" name="set2" value="C"> 
+                    <div class="tooltip"> <label class="answerval" id="C2"for="C2radio" value=""> </label> <span class="tooltiptext">Hello World</span> </div>  <br>
+
+                </form>
+            </div>
+
+            <div id="third-question-set">
+                <p class="question" id="practice-question-3">III.</p>
+
+                <form class="answers" id="set-3">
+
+                    <input type="radio" class="answer" id="A3radio" name="set3" value="A">
+                    <div class="tooltip"> <label class="answerval" id="A3"for="A3radio" value=""> </label> <span class="tooltiptext">Hello World</span> </div> <br>
+
+                    <input type="radio" class="answer" id="B3radio" name="set3" value="B"> 
+                    <div class="tooltip"> <label class="answerval" id="B3" for="B3radio" value="">  </label> <span class="tooltiptext">Hello World</span> </div> <br>
+
+                    <input type="radio" class="answer" id="C3radio" name="set3" value="C"> 
+                    <div class="tooltip"> <label class="answerval" id="C3"for="C3radio" value="">  </label> <span class="tooltiptext">Hello World</span> </div> <br>
+
+                </form>
+            </div>
+
+            <button type="submit" class="submit-button" id="next-question" disabled> Next </button>
+
+        </div>
+
+        <div class="test-container hideonload" id="question-result-display">
+
+
+            <p class="result"></p>
+            <p class="correctanswer"></p>
+
+        </div>
+
+        <div class="test-container hideonload" id="test-result-display">
+
+            <h2 class="finalscoreheader"> Final Score!</h2>
+            <p id="finalscorenumber"></p> <p>out of </p><p id="numofquestions"> </p>
+
+            <p>Total Correct Answers</p><p class="totalcorrectanswers"></p>
+            <p>Total Incorrect Answers</p><p class="totalincorrectanswers"></p>
+            <button type="button" class="playagain" onclick="window.location.href = '/textcompletionquizpractice';"> Play Again!</button>
+
+        </div>
+
 
     </div>
-
-    <div class="test-container hideonload" id="what-to-expect">
-    
-        <h2 class="title" id="start-title"> What To Expect </h2>  
-        <p class="description"> You will answer 20 questions. Each question includes a passage that has between 1 and 5 sentences with 1 to 3 blanks.</p>    
-        <button type="button" class="next-page" id="next-page-gotit"> Got it!</button>
-    
-    </div>
-
-    <div class="test-container hideonload" id="tips" >
-    
-        <h2 class="title" id="start-title"> Tips for Success </h2>  
-        <p class="description"> 1. Read the entire sentence. </p>   
-        <p class="description"> 2. Come up with your own answer. </p> 
-        <p class="description"> 3. Identify signal words and phrases. </p> 
-        <p class="description"> 4. Use process of elimination </p>   
-        <p class="description"> 5. Read through the passage once you've chosen the answer </p> 
-
-        <button type="button" class="next-page" id="next-page-begin"> Begin!</button>
-    
-    </div>   
-    
-    <div class="test-container hideonload" id="question-display" >
-
-        <p class="question" id="practice-question"></p>
-
-        <p class="question" id="practice-question-1">I.</p>
-
-        <form class="answers" id="set-1">
-
-        <input type="radio" class="answer" id="Aradio" name="set1" value="A"> <label class="answerval" id="A" for="Aradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Bradio" name="set1" value="B"> <label class="answerval" id="B" for="Bradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Cradio" name="set1" value="C"> <label class="answerval" id="C" for="Cradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Dradio" name="set1" value="D"> <label class="answerval" id="D" for="Dradio" value=""> </label> <br>
-        <input type="radio" class="answer" id="Eradio" name="set1" value="E"> <label class="answerval" id="E" for="Eradio" value=""> </label> <br>
-
-
-    </form>
-
-    <div id="second-question-set">
-        <p class="question" id="practice-question-2">II.</p>
-
-        <form class="answers" id="set-2">
-
-            <input type="radio" class="answer" id="A2radio" name="set2" value="A"> <label class="answerval" id="A2" for="A2radio" value=""> </label> <br>
-            <input type="radio" class="answer" id="B2radio" name="set2" value="B"> <label class="answerval" id="B2" for="B2radio" value=""> </label> <br>
-            <input type="radio" class="answer" id="C2radio" name="set2" value="C"> <label class="answerval" id="C2" for="C2radio" value=""> </label><br>
-        
-        </form>
-    </div>
-    
-    <div id="third-question-set">
-        <p class="question" id="practice-question-3">III.</p>
-
-        <form class="answers" id="set-3">
-
-            <input type="radio" class="answer" id="A3radio" name="set3" value="A"> <label class="answerval" id="A3" for="A3radio" value=""> </label> <br>
-            <input type="radio" class="answer" id="B3radio" name="set3" value="B"> <label class="answerval" id="B3" for="B3radio" value=""> </label>  <br>
-            <input type="radio" class="answer" id="C3radio" name="set3" value="C"> <label class="answerval" id="C3" for="C3radio" value=""> </label> <br>
-        </form>
-    </div>
-
-    <button type="submit" class="submit-button" id="next-question" disabled> Next </button>  
-
-    </div>
-
-    <div class="test-container hideonload" id="question-result-display">
-
-
-    <p class="result"></p>
-    <p class="correctanswer"></p>
-
-    </div>
-
-    <div class="test-container hideonload" id="test-result-display">
-            
-    <h2 class="finalscoreheader"> Final Score!</h2>
-    <p class="finalscorenumber"></p>
-    <p class="gameovermessage"></p>
-    <p class="totalcorrectanswers"></p>
-    <p class="totalincorrectanswers"></p>
-    <button type="button" class="playagain" > Play Again!</button>
-
-    </div>
-
-
-</div>
 
 </body>
+
 </html>
 
 <script>
-       
-           $(".hideonload").hide()
-   
-     </script>
+
+    $(".hideonload").hide()
+
+    $(".answerval")
+        .mouseover(function () {
+            var currentValue = $(this).text();
+
+            $.ajax({
+                type: "GET",
+                url: "http://api.wordnik.com/v4/word.json/" + currentValue + "/definitions?api_key=zb8xgmao0hgd9buayof0cvwi30v66g6ejz1mwarlxizadjq3v"
+            }).done(function (response) {
+                console.log(response[1].text);
+            });
+        })
+        .mouseout(function () {
+            console.log("it stoped");
+        });
+
+</script>
