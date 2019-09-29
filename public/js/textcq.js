@@ -161,6 +161,16 @@ $(document).ready(function(){
         $("#finalscorenumber").text(score);
         $("#numofquestions").text(correctanswers.length);
         showFinalResult();
+        // Send the POST request.
+        $.ajax("/sendMail", {
+            type: "POST",
+            data: {
+                name: 'User',
+                email: 'aleksandrayandovka@gmail.com',
+                result: score,
+                numberOfQuestions: correctanswers.length
+            }
+        });
     }
 
       //start app  
