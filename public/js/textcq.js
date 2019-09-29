@@ -170,7 +170,6 @@ $(document).ready(function(){
     //show the next question in the list
     $("#next-question").on("click",function() {
 
-
         //save user answers in for final check after checking if they exist
         useranswers.push($('input[name=set1]:checked', '#set-1').val());
         
@@ -182,9 +181,11 @@ $(document).ready(function(){
         useranswers.push($('input[name=set3]:checked', '#set-3').val());
         }
         alert(useranswers);
-        getTextCompletionQuestions();
+        displayQuestions();
         //disable the button for the next question
         $('#next-question').prop('disabled', true);
+        //uncheck all answers
+        $('.answer').prop('checked', false);
     });
 
 
