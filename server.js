@@ -4,6 +4,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+var sendMail = require('./mail.js');
 
 // Sets up the Express App
 // =============================================================
@@ -11,7 +12,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 //  api key
 require("dotenv").config();
-console.log(process.env.WORDNIK_API);
+
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -34,5 +35,9 @@ require("./routes/html-routes.js")(app);
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT http://localhost:8080/");
+  });
+
+  app.post('/sendMail', function(req, res){
+    sendMail(req.body.name, req.body.email, req.body.result, req.body.numberOfQuestions);
   });
 });
