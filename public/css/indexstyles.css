@@ -128,3 +128,36 @@ button {
 
 
 }
+/* Allan code*/
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+nav{
+  background: #077026;
+  padding: 20px 10px,
+}
+nav ul{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+nav li{
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+nav a{
+  color:rgb(5, 8, 7);
+  font-size: 18px;
+  background: #077026;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+main, header{
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 0 10px;
+      color:#333;
+}
