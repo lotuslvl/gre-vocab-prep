@@ -23,13 +23,13 @@ var sendMail = function(name, email, result, numberOfquestions){
         to: email,
         subject: 'GRE results.',
         text: "Welcome to our GRE preparation team!",
-        html: '<body style="color: green; background-color: yellow;padding: 30px;text-align: center"> <h1> Hello, '+ name +'!</h1><br><h2>Good job working on your GRE Test!</h2> <h2>You had ' + result+ ' from ' + numberOfquestions + '!</h2><h2>Keep going with your practice and get great results!</h2><h3>Best wishes from your Team One! <br><span style="font-size:500%;color:red;">&hearts;</span></h3></body>',
-        attachments: [
-            {
-                filename: 'kid.jpg',
-                path: './kid.jpg'
-            }
-        ]
+        html: '<body style="color: green; background-color: yellow;padding: 30px;text-align: center"> <h1> Hello, '+ name +'!</h1><br><h2>Good job working on your GRE Test!</h2> <h2>You had ' + result+ ' from ' + numberOfquestions + '!</h2><img src="cid:kid.jpg"><h2>Keep going with your practice and get great results!</h2><h3>Best wishes from your Team One! <br><span style="font-size:500%;color:red;">&hearts;</span></h3></body>',
+        // added a picture inside of html file
+        attachments: [{
+            filename: 'kid.jpg',
+            path: './kid.jpg',
+            cid: 'kid.jpg' //same cid value as in the html img src
+        }]
     }
     // step 3 - to handle errors
      transporter.sendMail(mailText, function (err, data) {
