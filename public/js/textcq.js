@@ -2,8 +2,6 @@ $(document).ready(function(){
 
     //where we will store all the text completion questions from the database
     var textcompletionquestions = [];
-    //always has the items we pulled
-    var textcompletionquestionsoriginal = []; 
     //all the correct answer from teh database
     var correctanswers=[];
     //all the answers the user selects

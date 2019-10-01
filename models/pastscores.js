@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     var PastScore = sequelize.define("PastScore", {
       //fill out rest of definition later
+      type:DataTypes.STRING,
       score: DataTypes.INTEGER,
       numright: DataTypes.INTEGER,
       numwrong: DataTypes.INTEGER,
-      datetaken:DataTypes.DATEONLY,
       
     });
 
