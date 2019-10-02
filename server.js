@@ -5,6 +5,7 @@
 // =============================================================
 var express = require("express");
 var sendMail = require('./mail.js');
+var app = require('express')();
 
 // chat - socket.io
 
@@ -12,7 +13,7 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/chat.html');
+    res.sendFile(__dirname + '.public/scoreboard.html');
 });
 
 io.on('connection', function (socket) {
