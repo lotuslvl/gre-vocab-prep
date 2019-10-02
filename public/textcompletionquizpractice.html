@@ -137,7 +137,7 @@
             <p id="finalscorenumber"></p>
             <p>out of </p>
             <p id="numofquestions"> </p>
-            
+
             <button type="button" class="playagain" onclick="window.location.href = '/textcompletionquizpractice';">
                 Play Again!</button>
 
@@ -158,7 +158,7 @@
         .mouseover(function () {
             var currentValue = $(this).text();
             $.ajax({
-                type: "GET",
+                type: "GET", 
                 url: "http://api.wordnik.com/v4/word.json/" + currentValue + "/definitions?api_key=zb8xgmao0hgd9buayof0cvwi30v66g6ejz1mwarlxizadjq3v"
             }).done(function (response) {
                 $(".tooltiptext").text(response[1].text);
