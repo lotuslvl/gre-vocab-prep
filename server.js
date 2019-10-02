@@ -12,9 +12,6 @@ var path = require ('path');
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/chat.html');
-});
 
 io.on('connection', function (socket) {
     socket.on('chat message', function (msg) {

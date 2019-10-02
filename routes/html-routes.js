@@ -30,7 +30,7 @@ module.exports = function(app) {
 
   // scoreboard route loads scoreboard.html
   app.get("/scoreboard", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/scoreboard.handlebars"));
+    res.sendFile(path.join(__dirname, "../public/scoreboard.html"));
   });
 
   // login route loads login.html
