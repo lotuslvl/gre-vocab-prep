@@ -36,6 +36,12 @@
   float: right;
 }
 
+.home-buttons{
+
+
+  margin-top:50px;
+}
+
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -67,6 +73,7 @@ a {
     font-family: 'Krub', sans-serif;
     font-size: 30px;
     color: rgb(117, 117, 117);
+    margin-right:15px;
 
 }
 
