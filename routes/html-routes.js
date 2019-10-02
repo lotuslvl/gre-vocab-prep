@@ -27,9 +27,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/textcompletionquizreal.html"));
   });
 
+
   // scoreboard route loads scoreboard.html
   app.get("/scoreboard", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/scoreboard.html"));
+    res.sendFile(path.join(__dirname, "../public/views/scoreboard.handlebars"));
   });
 
   // login route loads login.html

@@ -7,7 +7,8 @@
     <title>Practice Text Completion Prep</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/quizstyles.css" media="screen" title="no title">
     <script src='./js/textcqreal.js'></script>
 
 </head>
@@ -17,11 +18,10 @@
 
         <div class="test-container" id="start-screen">
 
-            <h2 class="title" id="start-title"> Text Completion Practice </h2>
-            <p class="description"> This is a practice test so you have an unlimited amount of time to complete it and
-                hints.</p>
+            <h2 class="title" id="start-title"> Text Completion Test </h2>
+            <p class="description"> This is a simulation of a text completion section of the SAT. You will have 20 minutes to complete the test and can't save it for later.</p>
 
-            <button type="button" class="next-page" id="next-page-okay"> Okay!</button>
+            <button type="button" class="next-page" id="next-page-okay"> Begin</button>
 
         </div>
 
@@ -100,11 +100,40 @@
 
         <div class="test-container hideonload" id="test-result-display">
 
-            <h2 class="finalscoreheader"> Final Score!</h2>
+            <h2 class="title"> Final Score!</h2>
             <p id="finalscorenumber"></p> <p>out of </p><p id="numofquestions"> </p>
 
             <p>Total Correct Answers</p><p class="totalcorrectanswers"></p>
             <p>Total Incorrect Answers</p><p class="totalincorrectanswers"></p>
+            
+            
+            <h3 class="title">Save your score and send it to your email!</h3>
+
+            <div>
+              <form>
+                <label for="fname">Your Nick Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Write your first name..">
+            
+                <label for="email">Email</label>
+                <input type="text" id="email" name="lastname" placeholder="example@email.com..">
+            
+                <label for="publicboard">Post to Public Scoreboard?</label>
+                <select id="publicboard" name="publicboard">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              
+                <button type="button" id="send-score"> Send My Score!</button>
+              </form>
+            </div>
+
+
+
+
+
+
+
+
             <button type="button" class="playagain" onclick="window.location.href = '/textcompletionquizreal';"> Take another test!</button>
 
         </div>
@@ -119,20 +148,5 @@
 <script>
 
     $(".hideonload").hide()
-
-    $(".answerval")
-        .mouseover(function () {
-            var currentValue = $(this).text();
-
-            $.ajax({
-                type: "GET",
-                url: "http://api.wordnik.com/v4/word.json/" + currentValue + "/definitions?api_key=zb8xgmao0hgd9buayof0cvwi30v66g6ejz1mwarlxizadjq3v"
-            }).done(function (response) {
-                console.log(response[1].text);
-            });
-        })
-        .mouseout(function () {
-            console.log("it stoped");
-        });
 
 </script>

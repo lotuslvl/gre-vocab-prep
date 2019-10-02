@@ -8,8 +8,13 @@ $(document).ready(function(){
  var useranswers=[];
  //checks which questions we are on currently
  var questioncounter=0;
- //where we store the final score of the quiz
+ //where we store the final score information for the quiz
  var score=0;
+ var outof=0;
+ var scorepercentage=0;
+ var numright=0;
+ var numwrong=0;
+ var timetaken=0
  //shows the start screen and hides other elements on the page
 
  function showStartScreen() {
@@ -141,8 +146,48 @@ $(document).ready(function(){
 
      $("#finalscorenumber").text(score);
      $("#numofquestions").text(correctanswers.length);
+     outof=correctanswers.length;
+     scorepercentage= (score/outof)*100;
+     numright=score;
+     numwrong=outof-score;
+     timetaken=22;
      showFinalResult();
  }
+
+
+ function sendScore() {
+
+   var newScore = {
+      name: $("#fname").val().trim(),
+      email: $("#email").val().trim(),
+      type:"Text Completion",
+      percentage: scorepercentage,
+      score: score,
+      numright: numright,
+      numwrong: numwrong,
+      timetaken: timetaken
+   };
+
+   if ($("#publicboard").val()==="yes") {
+   // Send the POST request.
+   $.ajax("/api/newscore", {
+     type: "POST",
+     data: newScore,
+   }).then(
+     function() {
+       console.log("sent score");
+     }
+   );
+
+   ("#send-score").prop("disabled", true);
+   $("#send-score").prop("value", "Score Sent!");
+    }
+ }
+
+//put your code here Alex for sending the email
+ function sendEmail() {
+
+}
 
    //start app  
    getTextCompletionQuestions();
@@ -196,6 +241,13 @@ $(document).ready(function(){
      }
   
  });
+
+ //send score to user
+ $("#send-score").on("click",function() {
+
+    sendScore();
+ 
+});
 
 
 });
