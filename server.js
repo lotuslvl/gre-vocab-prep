@@ -5,14 +5,20 @@
 // =============================================================
 var express = require("express");
 var sendMail = require('./mail.js');
-var path = require ('path');
+var app = require('express')();
 
 // chat - socket.io
 
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+var http = require('http');
+var server = http.createServer(app);
+var io = require('socket.io').listen(server)
 
 
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2d817b34f253e3d004b8510d1c7967a9198243f0
 
 io.on('connection', function (socket) {
     socket.on('chat message', function (msg) {
@@ -23,14 +29,20 @@ io.on('connection', function (socket) {
         socket.broadcast.emit('typing', data);
     })
 });
+<<<<<<< HEAD
 http.listen(8080, function () {
     console.log('listening on *:8080');
 });
+=======
+// server.listen(8080, function () {
+//     console.log('listening on *:3000');
+// });
+>>>>>>> 2d817b34f253e3d004b8510d1c7967a9198243f0
 
 
 // Sets up the Express App
 // =============================================================
-var app = express();
+// var app = express();
 var PORT = process.env.PORT || 8080;
 //  api key
 require("dotenv").config();
@@ -44,19 +56,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-//app.use(express.static("./public"));
-app.use(express.static(path.join(__dirname + '/public')));
-
-
-// Set Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-
+app.use(express.static("public"));
 
 // Routes
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 // =============================================================
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
@@ -65,7 +70,7 @@ require("./routes/html-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
+    server.listen(PORT, function() {
     console.log("App listening on PORT http://localhost:8080/");
   });
 
