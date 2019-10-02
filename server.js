@@ -15,10 +15,6 @@ var io = require('socket.io').listen(server)
 
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2d817b34f253e3d004b8510d1c7967a9198243f0
 
 io.on('connection', function (socket) {
     socket.on('chat message', function (msg) {
@@ -29,15 +25,9 @@ io.on('connection', function (socket) {
         socket.broadcast.emit('typing', data);
     })
 });
-<<<<<<< HEAD
 http.listen(8080, function () {
     console.log('listening on *:8080');
 });
-=======
-// server.listen(8080, function () {
-//     console.log('listening on *:3000');
-// });
->>>>>>> 2d817b34f253e3d004b8510d1c7967a9198243f0
 
 
 // Sets up the Express App
