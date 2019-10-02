@@ -52,4 +52,46 @@ module.exports = function(app) {
       });
   });
 
+
+
+
+// POST route for saving a new question
+app.post("/api/newscore", function(req, res) {
+  // create takes an argument of an object describing the item we want to
+  // insert into our table. In this case we just we pass in an object with a text
+  // and complete property (req.body)
+  console.log("sending");
+  db.Score.create({
+    name: req.body.name,
+    email: req.body.email,
+    type: req.body.type,
+    score: req.body.score,
+    percentage: req.body.percentage,
+    numright: req.body.numright,
+    numwrong: req.body.numwrong,
+    timetaken: req.body.timetaken,
+  }).then(function(dbScore) {
+    // We have access to the new todo as an argument inside of the callback function
+    res.json(dbScore);
+  })
+    .catch(function(err) {
+    // Whenever a validation or flag fails, an error is thrown
+    // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+      res.json(err);
+      console.log(err);
+    });
+});
+
+  // GET route for getting all of the questions
+  app.get("/api/getscores", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Score.findAll({}).then(function(scoredb) {
+      // We have access to the todos as an argument inside of the callback function
+      
+      //res.json(scoredb);
+      res.render("scoreboard",scoredb);
+    });
+  });
+
+
 };

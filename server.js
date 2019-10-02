@@ -5,7 +5,11 @@
 // =============================================================
 var express = require("express");
 var sendMail = require('./mail.js');
+<<<<<<< HEAD
 var app = require('express')();
+=======
+var path = require ('path');
+>>>>>>> f7ff4dc1768b92cc2721efd042a5dcb5103471f1
 
 // chat - socket.io
 
@@ -46,7 +50,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("public"));
+//app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname + '/public')));
+
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+
 
 // Routes
 // =============================================================
