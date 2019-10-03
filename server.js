@@ -25,14 +25,11 @@ io.on('connection', function (socket) {
         socket.broadcast.emit('typing', data);
     })
 });
-// server.listen(8080, function () {
-//     console.log('listening on *:3000');
-// });
+
 
 
 // Sets up the Express App
 // =============================================================
-// var app = express();
 var PORT = process.env.PORT || 8080;
 //  api key
 require("dotenv").config();
@@ -63,8 +60,9 @@ db.sequelize.sync().then(function() {
     server.listen(PORT, function() {
     console.log("App listening on PORT http://localhost:8080/");
   });
-
+// EMAIL
   app.post('/sendMail', function(req, res){
     sendMail(req.body.name, req.body.email, req.body.result, req.body.numberOfQuestions);
+    res.status(200).end();
   });
 });
