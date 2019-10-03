@@ -178,7 +178,7 @@ $(document).ready(function(){
         $("#finalscorenumber").text(score);
         $("#numofquestions").text(correctanswers.length);
         showFinalResult();
-        
+       
     }
 
       //start app  

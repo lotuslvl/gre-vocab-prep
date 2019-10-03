@@ -245,7 +245,7 @@ function startTimer(duration, display) {
        alert("Your score was sent to your email!");
        }
    
-       else(alert("Enter a proper email"))
+       else(alert("Enter a proper email"));
 
 
     //see if we should post to board
@@ -261,6 +261,19 @@ function startTimer(duration, display) {
    );
     }
  }
+
+   //added an EMAIL endpoint with newScore object data 
+   function sendEmail(newScore) {
+    $.ajax("/sendMail", {
+        type: "POST",
+        data: {
+            name: newScore.name,
+            email: newScore.email,
+            result: newScore.numright,
+            numberOfQuestions: newScore.numright + newScore.numwrong
+        }
+    });
+}
 
 
    //start app  
