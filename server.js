@@ -25,9 +25,7 @@ io.on('connection', function (socket) {
         socket.broadcast.emit('typing', data);
     })
 });
-http.listen(8080, function () {
-    console.log('listening on *:8080');
-});
+
 
 
 

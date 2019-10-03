@@ -8,7 +8,8 @@ input[type=text], input[type=password] {
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #4CAF50;
+  background-color: #acb4ac;
+  background: #e2e6e2;
 }
 
 /* Add a background color when the inputs get focus */
@@ -19,7 +20,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #acb4ac;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -85,7 +86,7 @@ hr {
   top: 15px;
   font-size: 40px;
   font-weight: bold;
-  color: #f1f1f1;
+  color: #2982d6;
 }
 
 .close:hover,

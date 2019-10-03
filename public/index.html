@@ -1,120 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-		
+
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/css/loginstyles/signupstyles/indexstyles.css" type="text/css" />
-		<title>GRE Prep Game</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="/assets/home.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap" rel="stylesheet">
-	</head>
-	
-	<body>
-		
+	<link rel="stylesheet" href="css/loginstyles.css" type="text/css" />
+	<link rel="stylesheet" href="css/signupstyles.css" type="text/css" />
+	<link rel="stylesheet" href="css/indexstyles.css" type="text/css" />
+	<title>GRE Prep Game</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="./js/signup.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+
 
 	<div class="header">
-			
-		<a href="../public/login.html" class="logo">Preppi</a>
+
+		<a href="login" class="logo">Preppi</a>
 		<div class="header-right">
-		<a class="active" href="#home">Home</a>
-		<a href="../public/textcompletionquizpractice.html">Practice</a>
-		<a href="../public/textcompletionquizreal.html">Prep</a>
-		<a href="../public/views/scoreboard.handlebars">Scoreboard</a>
+			<a class="active" href="#home">Home</a>
+			<a href="textcompletionquizpractice.html">Practice</a>
+			<a href="textcompletionquizreal.html">Prep</a>
+			<a href="scoreboard">Scoreboard</a>
 		</div>
 	</div>
 
 	<div class="hero-image">
 		<div class="hero-text">
-			 <img src="images/prep1.png" alt="Prepi Logo"> <br>
-			 <div class="home-buttons">
+			<img src="images/prep1.png" alt="Prepi Logo"> <br>
+			<div class="home-buttons">
 
-					<button onclick="document.getElementById('id01').style.display='block'"
-					style="width:auto;">Sign Up</button>
-					<button><a href="../public/textcompletionquizpractice.html">Try a Practice Test</a></button>
-				<button><a href="/signup">Sign Up</a></button>
-		        <button><a href="/textcompletionquizpractice">Try a Practice Test</a></button>
-
-				</div>
+				<button onclick="document.getElementById('id01').style.display='block'"
+					style="width:auto;color: #000;">Sign Up</button>
+				<button><a href="textcompletionquizpractice">Try a Practice Test</a></button>
 			</div>
 		</div>
+	</div>
 
 
-		<div class="web-app-description">
+	<div class="web-app-description">
 
-			<div class="text">
+		<div class="text">
 			<h2 class="section-title">Ace the GRE with Your Friends!</h2>
-			<p>Getting ready for the GRE can be tough. Prep books line your bookshelves ,but it is still difficult to muster up the energy to study.</p>
-			<p>Prepi gets you ready for your big day by pairing traditional study prep with friendly,gamified competition.</p>
+			<p>Getting ready for the GRE can be tough. Prep books line your bookshelves ,but it is still difficult to
+				muster up the energy to study.</p>
+			<p>Prepi gets you ready for your big day by pairing traditional study prep with friendly,gamified
+				competition.</p>
 			<p>It's simple. Use our practice tests to get you ready and monitor your progress. </p>
-			<p>When you are ready, pair yourself with a study buddy and set practice jam sessions where you can answer questions head-to-head. </p>
+			<p>When you are ready, pair yourself with a study buddy and set practice jam sessions where you can answer
+				questions head-to-head. </p>
 			<br>
 			<p>Technologies Used: </p>
 			<p>HTML, CSS, Javascript, jQuery, mySQL, Socket.io, Wordnik API </p>
 
+		</div>
+	</div>
+
+
+	<div class="web-app-description-2">
+		<div class="cards">
+			<h2 class="section-title">About the Creators</h2>
+			<div class="card" id="lotus">
+				<img src="https://media.licdn.com/dms/image/C4D03AQFuXhdFV_2k4g/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=AZ0LduU0tsORxBvhf_5ID_DASbkblT8xQovR7X_1IUA"
+					alt="Avatar" style="width:350px">
+				<div class="container">
+					<h4><b>Lotus Lindez</b></h4>
+					<p>Front-end Dev and Database Master</p>
+				</div>
+			</div>
+
+			<div class="card" id="allan">
+				<img src="images/allan.png" alt="pic of allan" style="width:350px">
+				<div class="container">
+					<h4><b>Allan Pearson</b></h4>
+					<p>Authentication and Other Cool Stuff</p>
+				</div>
+			</div>
+
+			<div class="card" id="alex">
+				<img src="https://media.licdn.com/dms/image/C4D03AQGJvu53ZlG8Ig/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=X2RrNCm2EdhFV2SKyWoeibuWybl2gl4IKtNH4Fw65Us"
+					alt="Avatar" style="width:350px">
+				<div class="container">
+					<h4><b>Alexandra Skinner</b></h4>
+					<p>API Wrangler and Network Dev</p>
+				</div>
 			</div>
 		</div>
 
+	</div>
+	<div id="id01" class="modal">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close"
+			title="Close Modal">&times;</span>
+		<form class="modal-content" action="">
+			<div class="container">
+				<h1>Sign Up</h1>
+				<p>Please fill in this form to create an account.</p>
+				<hr>
+				<label for="fullname"><b>Name</b></label>
+				<input type="text" placeholder="Enter Name" name="fullname" id="fullname" required>
+				<label for="email"><b>Email</b></label>
+				<input type="text" placeholder="Enter Email" name="email" id="email" required>
+				<label for="username"><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" name="username" id="username" required>
 
-        <div class="web-app-description-2">
-				<div class="cards">
-				<h2 class="section-title">About the Creators</h2>
-				<div class="card" id="lotus">
-				<img src="https://media.licdn.com/dms/image/C4D03AQFuXhdFV_2k4g/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=AZ0LduU0tsORxBvhf_5ID_DASbkblT8xQovR7X_1IUA" alt="Avatar" style="width:350px">
-				<div class="container">
-				  <h4><b>Lotus Lindez</b></h4>
-				  <p>Front-end Dev and Database Master</p>
+				<label for="psw"><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+				<label for="psw-repeat"><b>Repeat Password</b></label>
+				<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+				<label>
+					<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+				</label>
+
+				<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+				<div class="clearfix">
+					<button type="button" onclick="document.getElementById('id01').style.display='none'"
+						class="cancelbtn">Cancel</button>
+					<button type="submit" class="signupbtn" id="signupbtn">Sign Up</button>
 				</div>
-			  </div>
-
-			  <div class="card" id="allan">
-					<img src="images/allan.png" alt="pic of allan" style="width:350px">
-					<div class="container">
-					  <h4><b>Allan Pearson</b></h4>
-					  <p>Authentication and Other Cool Stuff</p>
-					</div>
-			  </div>
-
-			  <div class="card" id="alex">
-					<img src="https://media.licdn.com/dms/image/C4D03AQGJvu53ZlG8Ig/profile-displayphoto-shrink_200_200/0?e=1575504000&v=beta&t=X2RrNCm2EdhFV2SKyWoeibuWybl2gl4IKtNH4Fw65Us" alt="Avatar" style="width:350px">
-					<div class="container">
-					  <h4><b>Alexandra Skinner</b></h4>
-					  <p>API Wrangler and Network Dev</p>
-					</div>
-			  </div>
-            </div>
-           
-		</div>
-		<div id="id01" class="modal">
-				<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-				<form class="modal-content" action="">
-				  <div class="container">
-					<h1>Sign Up</h1>
-					<p>Please fill in this form to create an account.</p>
-					<hr>
-					<label for="email"><b>Email</b></label>
-					<input type="text" placeholder="Enter Email" name="email" required>
-			  
-					<label for="psw"><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" required>
-			  
-					<label for="psw-repeat"><b>Repeat Password</b></label>
-					<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-					
-					<label>
-					  <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-					</label>
-			  
-					<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-			  
-					<div class="clearfix">
-					  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-					  <button type="submit" class="signupbtn">Sign Up</button>
-					</div>
-				  </div>
-				</form>
-				<script>
+			</div>
+		</form>
+		<!-- <script>
 						// Get the modal
 						var modal = document.getElementById('id01');
 						
@@ -124,8 +136,8 @@
 							modal.style.display = "none";
 						  }
 						}
-						</script>
-		
-	</body>
-</html>
+						</script> -->
 
+</body>
+
+</html>
