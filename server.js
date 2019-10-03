@@ -30,6 +30,7 @@ http.listen(8080, function () {
 });
 
 
+
 // Sets up the Express App
 // =============================================================
 // var app = express();
@@ -63,8 +64,9 @@ db.sequelize.sync().then(function() {
     server.listen(PORT, function() {
     console.log("App listening on PORT http://localhost:8080/");
   });
-
+// EMAIL
   app.post('/sendMail', function(req, res){
     sendMail(req.body.name, req.body.email, req.body.result, req.body.numberOfQuestions);
+    res.status(200).end();
   });
 });
