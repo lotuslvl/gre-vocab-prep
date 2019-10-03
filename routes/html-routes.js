@@ -25,17 +25,24 @@ module.exports = function(app) {
   // sends to real text completion quiz
   app.get("/textcompletionquizreal", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/textcompletionquizreal.html"));
+    
+  });
+
+  // playerdashboard route loads playerdashboard.html
+  app.get("/readingcomprehensionquizpractice", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/readingcomprehensionquizpractice.html"));
+  });
+
+  // sends to real text completion quiz
+  app.get("/readingcomprehensionreal", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/readingcomprehensionreal.html"));
   });
 
 
   // scoreboard route loads scoreboard.html
   app.get("/scoreboard", function(req, res) {
-<<<<<<< HEAD
-    res.sendFile(path.join(__dirname, "../public/scoreboard.html"));
-=======
     res.render("scoreboard");
     // res.render(path.join(__dirname, "../public/views/scoreboard.handlebars"));
->>>>>>> 2d817b34f253e3d004b8510d1c7967a9198243f0
   });
 
   // login route loads login.html
