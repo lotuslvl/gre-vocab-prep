@@ -209,7 +209,6 @@ function startTimer(duration, display) {
      scorepercentage= (score/outof)*100;
      numright=score;
      numwrong=outof-score;
-     timetaken=22;
      showFinalResult();
  }
 
