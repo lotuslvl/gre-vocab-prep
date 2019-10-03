@@ -10,8 +10,13 @@ $(document).ready(function(){
     var questioncounter=0;
     //where we store the final score of the quiz
     var score=0;
-    //shows the start screen and hides other elements on the page
 
+   
+
+
+
+    //shows the start screen and hides other elements on the page
+   
     function showStartScreen() {
         $("#start-screen").show();
         $("#what-to-expect").hide();
@@ -69,6 +74,20 @@ $(document).ready(function(){
 
     //display 1 question to the user from the list we received from the database
     function displayQuestions() {
+
+        if (textcompletionquestions[questioncounter].correctanswer2) {
+            $("#D").hide();
+            $("#E").hide();
+            $("#Dradio").hide();
+            $("#Eradio").hide();
+        }
+        else{
+            $("#D").show();
+            $("#E").show();
+            $("#Dradio").show();
+            $("#Eradio").show()
+    
+        }
 
         $("#practice-question").text(textcompletionquestions[questioncounter].question)
         $("#A").text(textcompletionquestions[questioncounter].correctanswer1);
@@ -159,16 +178,7 @@ $(document).ready(function(){
         $("#finalscorenumber").text(score);
         $("#numofquestions").text(correctanswers.length);
         showFinalResult();
-        // Send the POST request.
-        $.ajax("/sendMail", {
-            type: "POST",
-            data: {
-                name: 'User',
-                email: 'aleksandrayandovka@gmail.com',
-                result: score,
-                numberOfQuestions: correctanswers.length
-            }
-        });
+        
     }
 
       //start app  

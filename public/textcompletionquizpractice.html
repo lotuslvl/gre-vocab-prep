@@ -133,13 +133,16 @@
 
         <div class="test-container hideonload" id="test-result-display">
 
-            <h2 class="finalscoreheader"> Final Score!</h2>
-            <p id="finalscorenumber"></p>
-            <p>out of </p>
-            <p id="numofquestions"> </p>
-            
-            <button type="button" class="playagain" onclick="window.location.href = '/textcompletionquizpractice';">
+            <h2 class="title"> Final Score!</h2>
+            <p>
+            <span id="finalscorenumber"></span>
+            <span>out of </span>
+            <span id="numofquestions"> </span>
+                </p>
+            <button type="button" class="playagain" id="refresh" onclick="window.location.href = '/textcompletionquizpractice';">
                 Play Again!</button>
+                <button type="button" class="playagain" id="go-home" onclick="window.location.href = '/';">
+                    Back to Home</button>
 
         </div>
 

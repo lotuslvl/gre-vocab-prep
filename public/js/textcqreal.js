@@ -14,7 +14,50 @@ $(document).ready(function(){
  var scorepercentage=0;
  var numright=0;
  var numwrong=0;
- var timetaken=0
+ var timetaken=0;
+
+ //where we set the timer
+ var display = document.querySelector('#clock');
+ 
+ 
+//set timer
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds; 
+
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    setInterval(timer, 1000);
+}
+
+
+
+  
+
+ 
+    
+
  //shows the start screen and hides other elements on the page
 
  function showStartScreen() {
@@ -34,6 +77,7 @@ $(document).ready(function(){
      $("#question-display").show();
      $("#question-result-display").hide();
      $("#test-result-display").hide();
+     startTimer(1200, display);
  }   
 
  function showQuestionResult() {
@@ -57,6 +101,20 @@ $(document).ready(function(){
 
  //display 1 question to the user from the list we received from the database
  function displayQuestions() {
+
+    if (textcompletionquestions[questioncounter].correctanswer2) {
+        $("#D").hide();
+        $("#E").hide();
+        $("#Dradio").hide();
+        $("#Eradio").hide();
+    }
+    else{
+        $("#D").show();
+        $("#E").show();
+        $("#Dradio").show();
+        $("#Eradio").show()
+
+    }
 
      $("#practice-question").text(textcompletionquestions[questioncounter].question)
      $("#A").text(textcompletionquestions[questioncounter].correctanswer1);
@@ -96,7 +154,8 @@ $(document).ready(function(){
      $("#third-question-set").hide();
      }
      questioncounter=questioncounter+1;
- 
+
+
  }
 
  
@@ -157,6 +216,7 @@ $(document).ready(function(){
 
  function sendScore() {
 
+
    var newScore = {
       name: $("#fname").val().trim(),
       email: $("#email").val().trim(),
@@ -168,6 +228,27 @@ $(document).ready(function(){
       timetaken: timetaken
    };
 
+     //see if the email has an at sign
+     if(($("#email").val().trim()).includes("@")){
+        // Send the POST request.
+        $.ajax("/sendMail", {
+           type: "POST",
+           data: {
+               name: $("#fname").val().trim(),
+               email: $("#email").val().trim(),
+               result: score,
+               numberOfQuestions: correctanswers.length
+           }
+       });
+       $("#send-score").prop("disabled", true);
+      $("#send-score").text( "Score Sent!");
+       alert("Your score was sent to your email!");
+       }
+   
+       else(alert("Enter a proper email"))
+
+
+    //see if we should post to board
    if ($("#publicboard").val()==="yes") {
    // Send the POST request.
    $.ajax("/api/newscore", {
@@ -175,19 +256,12 @@ $(document).ready(function(){
      data: newScore,
    }).then(
      function() {
-       console.log("sent score");
+       console.log("sent score to scoreboard");
      }
    );
-
-   ("#send-score").prop("disabled", true);
-   $("#send-score").prop("value", "Score Sent!");
     }
  }
 
-//put your code here Alex for sending the email
- function sendEmail() {
-
-}
 
    //start app  
    getTextCompletionQuestions();
@@ -237,6 +311,9 @@ $(document).ready(function(){
      }
 
      else{
+         //take time taken
+         timetaken= $('#clock').text();
+         $('#timetaken').text(timetaken);
          gradeQuiz();
      }
   
