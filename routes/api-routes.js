@@ -28,10 +28,25 @@ module.exports = function(app) {
   });
 
 
+  app.post("/api/login", function(req, res) {
+    db.Player.findAll({
+      where:{
+        username:req.body.username,
+        password:req.body.password
+      }
+    })    
+    .then(function(dbPlayer) {
+      res.json(dbPlayer);
+    })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
 
 
   // POST route for saving a new question
-  app.post("/api/newquestion", function(req, res) {
+  app.post("/api/newplayer", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)

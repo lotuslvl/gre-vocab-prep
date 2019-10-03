@@ -42,7 +42,9 @@ module.exports = function(app) {
   // scoreboard route loads scoreboard.html
   app.get("/scoreboard", function(req, res) {
     res.render("scoreboard");
+
     // res.render(path.join(__dirname, "../public/views/scoreboard.handlebars"));
+
   });
 
   // login route loads login.html
