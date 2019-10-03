@@ -7,9 +7,11 @@
     <title>Practice Text Completion Prep</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type='text/javascript' src='http://code.jquery.com/jquery.min.js'></script>
     <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/quizstyles.css" media="screen" title="no title">
     <script src='./js/textcqreal.js'></script>
+    
 
 </head>
 
@@ -29,6 +31,8 @@
 
 
         <div class="test-container hideonload" id="question-display">
+
+            <p class="question" id="clock">00:00</p>
 
             <p class="question" id="practice-question"></p>
 
@@ -102,7 +106,8 @@
         <div class="test-container hideonload" id="test-result-display">
 
             <h2 class="title"> Final Score!</h2>
-            <p id="finalscorenumber"></p> <p>out of </p><p id="numofquestions"> </p>
+            <p><span id="finalscorenumber"></span> <span>out of </span><span id="numofquestions"> </span> </p>
+            <p>Time Taken:<span id="timetaken"> </span> </p>
 
             <h3 class="title">Save your score and send it to your email!</h3>
 
@@ -132,6 +137,8 @@
 
 
             <button type="button" class="playagain" onclick="window.location.href = '/textcompletionquizreal';"> Take another test!</button>
+            <button type="button" id="go-home" onclick="window.location.href = '/';">
+                Back to Home</button>
 
         </div>
 
