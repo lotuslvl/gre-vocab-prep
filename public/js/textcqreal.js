@@ -224,7 +224,7 @@ function startTimer(duration, display) {
       score: score,
       numright: numright,
       numwrong: numwrong,
-      timetaken: timetaken
+      timetaken: (20-parseFloat(timetaken.replace(":", ".")))-.4
    };
 
      //see if the email has an at sign
@@ -259,6 +259,8 @@ function startTimer(duration, display) {
      }
    );
     }
+
+    localStorage.setItem(newScore.type, newScore.percentage, newScore.timetaken);
  }
 
    //added an EMAIL endpoint with newScore object data 

@@ -22,8 +22,8 @@ function displayScores (){
       for(var i = 0; i < scores.length; i++){
         var newUser = $("<tr>").append(
           $("<td>").text(scores[i].name),
-          $("<td>").text(scores[i].score),
-          $("<td>").text(scores[i].timetaken))
+          $("<td>").text(scores[i].percentage+" %"),
+          $("<td>").text(scores[i].timetaken+" minutes")   )
         
           // Append the new row to the table
           $("#user-table > tbody").append(newUser);

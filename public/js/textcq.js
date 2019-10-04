@@ -177,7 +177,12 @@ $(document).ready(function(){
 
         $("#finalscorenumber").text(score);
         $("#numofquestions").text(correctanswers.length);
+
+        var percentage= (score/correctanswers.length)*100;
         showFinalResult();
+
+
+        localStorage.setItem('Text Completion Practice', percentage, 'no time taken');
        
     }
 

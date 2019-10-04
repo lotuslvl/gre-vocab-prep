@@ -6,24 +6,44 @@
                     <title>Practice Text Completion Prep</title>
                     <meta name='viewport' content='width=device-width, initial-scale=1'>
                            
-                    <link rel="stylesheet" href="css/loginstyles.css" media="screen" title="no title">
+                    <link rel="stylesheet" href="css/signupstyles.css" media="screen" title="no title">
+                    <link rel="stylesheet" href="css/indexstyles.css" type="text/css" />
                     <script src="https://code.jquery.com/jquery.js"></script>
                     <script src='./js/login.js'></script>
+                    <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap"
+                    rel="stylesheet">
 
                     </head>
 <body>
-    <div class="container">
-    <div class="main">
-        <h2>Prepi Login Form Validation</h2>
-        <form id="form_id" method="post" name="myform">
-            <label>User Name :</label>
-            <input type="text" name="username" id="username"/>
-            <label>Password :</label>
-            <input type="password" name="password" id="password"/>
-            <input type="button" value="Login" id="btnLogin"/>
-            </form>
-            <span><p>Listen to a sample : <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/buCD-_1UPn4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p><b class="note">Note : Let's Play!</b></span>
 
+    	<div class="header">
+
+                <a href="/login" class="logo">Preppi</a>
+                <div class="header-right">
+        
+                <a class="active" href="/">Home</a>
+                <a href="/textcompletionquizpractice">Practice</a>
+                <a href="/textcompletionquizreal">Compete</a>
+                <a href="/scoreboard">Leaderboard</a>
+        
+                </div>
+            </div>
+
+
+
+    <div class="login-container">
+    <div class="main">
+        <h4>Login to Prepi</h4>
+        <form id="form_id" method="post" name="myform">
+            <p>User Name :</p> <br>
+            <input type="text" name="username" id="username"/> <br>
+            <p>Password :</p> <br>
+            <input type="password" name="password" id="password"/>  <br>
+
+            <button type="button" value="Login" id="btnLogin">Log In</button>
+            </form>
+            <iframe id="video" width="30%" height="30%" src="https://www.youtube-nocookie.com/embed/buCD-_1UPn4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
     </body>
 
 </html>

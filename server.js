@@ -23,9 +23,6 @@ io.on('connection', function (socket) {
 });
 
 
-
-
-
 var PORT = process.env.PORT || 8080;
 
 require("dotenv").config();
@@ -42,9 +39,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Routes
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 // =============================================================
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);

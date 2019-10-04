@@ -1,18 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>GRE Prep Game</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="/assets/home.js"></script>
-	</head>
-	<body>
-        <h1>WELCOME TO PREP-E!</h1>
-		<p>We are still working on it!</p>
-		<p>Text Completion</p>
-		<button><a href="/textcompletionquizpractice" class="button">Take a Text Completion Practice Test</a></button>
-		<button><a href="/textcompletionquizreal" class="button">Take a Text Completion Test</a></button>
-	</body>
+
+<html lang="en-us">
+    
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="js/scoreboard.js"></script> 
+        <link rel="stylesheet" href="css/indexstyles.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap"
+		rel="stylesheet">
+
+
+
+</head>
+<style>
+
+
+
+
+   
+</style>
+
+<body>
+
+    
+	<div class="header">
+
+            <a href="/login" class="logo">Preppi</a>
+            <div class="header-right">
+    
+            <a href="/">Home</a>
+            <a href="/textcompletionquizpractice">Practice</a>
+            <a href="/textcompletionquizreal">Compete</a>
+			<a href="/scoreboard">Leaderboard</a>
+			<a class="active" href="/playerdashboard">My Dashboard</a>
+    
+            </div>
+        </div>
+
+
+    <div class="score-section">
+
+        <h2 class="section-title">Your Scores</h2>
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <!-- Current user-->
+                <div class="scoreboard">
+                    
+                    <div class="scoreboard-body">
+                        <table class="table table-sm table-hover" id='user-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Score</th>
+                                    <th scope="col">Time</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
 </html>

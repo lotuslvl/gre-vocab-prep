@@ -5,53 +5,57 @@
     <head>
 
         <meta charset="UTF-8">
-        <title>Scoreboard</title>
+        <title>Leaderboards</title>
         
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="js/scoreboard.js"></script> 
+        <link rel="stylesheet" href="css/indexstyles.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap"
+		rel="stylesheet">
 
 
 
 </head>
 <style>
-    body {
-        background-color: aqua;
 
-    }
 
-    .jumbotron {
-        background-color: white;
-        color: green;
-        opacity: 0.5;
-    }
+
 
    
 </style>
 
 <body>
 
+    
+	<div class="header">
 
-    <div class="container">
-
-        <!-- Jumbotron -->
-        <div class="jumbotron">
-            <div class="inside">
-                <h1 class="text-center"> Scoreboard</h1>
-
+            <a href="/login" class="logo">Preppi</a>
+            <div class="header-right">
+    
+            <a href="/">Home</a>
+            <a href="/textcompletionquizpractice">Practice</a>
+            <a href="/textcompletionquizreal">Compete</a>
+            <a class="active" href="/scoreboard">Leaderboard</a>
+    
             </div>
         </div>
+
+
+    <div class="score-section">
+
+        <h2 class="section-title">Top Scores for Text Completion</h2>
 
         <div class="row">
 
             <div class="col-md-12">
 
                 <!-- Current user-->
-                <div class="card mb-4">
+                <div class="scoreboard">
                     
-                    <div class="card-body">
+                    <div class="scoreboard-body">
                         <table class="table table-sm table-hover" id='user-table'>
                             <thead>
                                 <tr>

@@ -25,11 +25,11 @@ module.exports = function(app) {
   });
 
 
-  app.post("/api/login", function(req, res) {
+  app.get("/api/login", function(req, res) {
     db.Player.findAll({
       where:{
-        username:req.body.username,
-        password:req.body.password
+        loginusername:req.username,
+        password:req.password
       }
     })    
     .then(function(dbPlayer) {
