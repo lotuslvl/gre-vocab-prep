@@ -3,7 +3,7 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + 'public/scoreboard.html');
+    res.sendFile(__dirname + 'public/chat.html');
 });
 
 io.on('connection', function (socket) {
@@ -15,7 +15,7 @@ io.on('connection', function (socket) {
         socket.broadcast.emit('typing', data);
     })
 });
-http.listen(3000, function () {
+http.listen(4000, function () {
     console.log('listening on *:3000');
 });
 

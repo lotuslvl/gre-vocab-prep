@@ -6,17 +6,18 @@
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
-ul {
-    list-style: none;
-    text-align: center;
-   
+.messages-bg {
+    background-color: rgb(225, 226, 128);
+    color:forestgreen;
+    text-align: left;
+    
 }
 #message, #nickname {
     width: 100%;
 }
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
-  background-color: rgb(237, 240, 51);
+  background-color: rgb(233, 235, 163);
   color: rgb(62, 70, 61);
   padding: 16px 20px;
   border: none;
@@ -32,12 +33,15 @@ ul {
 
 /* The popup chat - hidden by default */
 .chat-popup {
+    position: absolute;
   display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
   z-index: 9;
+}
+
+#chat-header {
+    
+  z-index: 10;
+  cursor: move;
   
  
 }
@@ -112,10 +116,10 @@ h3 {
 
     <div class="chat-popup" id="myForm">
         <form action="" class="form-container">
-            <h3>Chat</h3>
+            <h3 id="myFormHeader">Chat</h3>
 
             <div class="chat-window">
-                <ul id="messages"></ul>
+                <div id="messages" class="messages-bg"></div>
             </div>
             <div id="feedback"></div>
 
@@ -135,11 +139,13 @@ h3 {
     <script>
         function openForm() {
             document.getElementById("myForm").style.display = "block";
-            
+            document.getElementById("open").style.display = "none";
+
         }
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
+            document.getElementById("open").style.display = "block";
         }
     </script>
     <script src="/socket.io/socket.io.js"></script>
@@ -168,7 +174,7 @@ h3 {
 
             socket.on('chat message', function (msg) {
 
-                $('#messages').append($('<li>').html('<strong>' + msg.nickname + '</strong>' + ': ' + msg.message));
+                $('#messages').append($('<p>').html('<strong>' + msg.nickname + '</strong>' + ': ' + msg.message));
                 // var messages = document.getElementById('messages');
                 // messages.innerHTML += '<p><strong>' + data.nickname + ':</strong>' + data.message + '</p>'
             });
@@ -182,6 +188,54 @@ h3 {
                 }, 2000);
             });
         });
+
+
+        // Make the DIV element draggable:
+        dragElement(document.getElementById("myForm"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "Header")) {
+                // if present, the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "Header").onmousedown = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+
+
     </script>
 
 </body>
