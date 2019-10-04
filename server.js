@@ -1,6 +1,4 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-// ******************************************************************************
+
 // *** Dependencies
 // =============================================================
 var express = require("express");
@@ -12,8 +10,6 @@ var app = require('express')();
 var http = require('http');
 var server = http.createServer(app);
 var io = require('socket.io').listen(server)
-
-
 
 
 io.on('connection', function (socket) {
@@ -29,11 +25,9 @@ io.on('connection', function (socket) {
 
 
 
-// Sets up the Express App
-// =============================================================
-// var app = express();
+
 var PORT = process.env.PORT || 8080;
-//  api key
+
 require("dotenv").config();
 
 
@@ -54,7 +48,7 @@ app.set("view engine", "handlebars");
 // =============================================================
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-//require("./routes/admin-routes.js")(app);
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -67,5 +61,5 @@ db.sequelize.sync().then(function() {
     sendMail(req.body.name, req.body.email, req.body.result, req.body.numberOfQuestions);
     res.status(200).end();
   });
-  
+
 });
