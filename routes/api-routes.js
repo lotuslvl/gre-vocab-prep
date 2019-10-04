@@ -103,8 +103,8 @@ app.post("/api/newscore", function(req, res) {
     db.Score.findAll({}).then(function(scoredb) {
       // We have access to the todos as an argument inside of the callback function
       
-      //res.json(scoredb);
-      res.render("scoreboard",scoredb);
+      res.json(scoredb);
+  
     });
   });
 
