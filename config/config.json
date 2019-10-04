@@ -4,7 +4,8 @@
     "password": "pz1akwujuh7rniy8",
     "database": "mzpo44jd0nzuqi8t",
     "host": "i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL"
   },
   "test": {
     "username": "root",
@@ -15,10 +16,12 @@
   },
   "production": {
     "username": "j07yjw4knczmsqs1",
-    "password": "ds1q5lsdxn119wy0",
+    "password": "pz1akwujuh7rniy8",
     "database": "mzpo44jd0nzuqi8t",
     "host": "i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL"
+
   }
 }
 
