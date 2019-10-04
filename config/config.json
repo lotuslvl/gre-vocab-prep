@@ -1,18 +1,17 @@
 {
   "development": {
+    "username": "j07yjw4knczmsqs1",
+    "password": "pz1akwujuh7rniy8",
+    "database": "mzpo44jd0nzuqi8t",
+    "host": "i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
     "username": "root",
     "password": "password",
     "database": "greprep_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
   },
   "production": {
     "username": "j07yjw4knczmsqs1",
