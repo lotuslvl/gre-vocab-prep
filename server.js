@@ -67,4 +67,5 @@ db.sequelize.sync().then(function() {
     sendMail(req.body.name, req.body.email, req.body.result, req.body.numberOfQuestions);
     res.status(200).end();
   });
+  
 });
