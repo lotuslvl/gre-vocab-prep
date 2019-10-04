@@ -206,9 +206,7 @@ $(document).ready(function(){
         $('#next-question').prop('disabled', false);
         
      }
-     else {
-       console.log("still have questions to answer")
-     }
+     
     });
 
 

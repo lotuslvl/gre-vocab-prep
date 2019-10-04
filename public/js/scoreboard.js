@@ -15,8 +15,7 @@ function displayScores (){
     
   }).then(
     function() {
-      console.log(scores);
-      console.log(scores[0].name);
+      
 
 
       // / // Create the new row
