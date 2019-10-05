@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Practice Reading Comprehension Prep</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/quizstyles.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap"
+        rel="stylesheet">
+    <script src='./js/readingcompreal.js'></script>
+
+
+
+</head>
+
+<body>
+
+    	<div class="header">
+
+                <a href="/admin" class="logo">Preppi</a>
+                <div class="header-right">
+        
+                <a href="/">Home</a>
+                <a href="/textcompletionquizpractice">Practice</a>
+                <a class="active"  href="/textcompletionquizreal">Compete</a>
+                <a href="/scoreboard">Leaderboard</a>
+                <a href="/login">My Dashboard</a>
+        
+                </div>
+            </div>
+
+    <div class="practice-test-container">
+
+        <div class="test-container" id="start-screen">
+
+            <h2 class="title" id="start-title"> Reading Comprehension Practice </h2>
+            <p class="description"> This is a practice test so you have an unlimited amount of time to complete it and
+                hints.</p>
+
+            <button type="button" class="next-page" id="next-page-okay"> Okay!</button>
+
+        </div>
+
+        <div class="test-container hideonload" id="what-to-expect">
+
+            <h2 class="title" id="start-title"> What To Expect </h2>
+            <p class="description"> You will answer 10 questions. Each question includes a passage and a question related to that passage.</p>
+            <button type="button" class="next-page" id="next-page-gotit"> Got it!</button>
+
+        </div>
+
+        <div class="test-container hideonload" id="tips">
+
+            <h2 class="title" id="start-title"> Tips for Success </h2>
+            <p class="description"> 1. Read the entire passage. </p>
+            <p class="description"> 2. Come up with your own answer. </p>
+            <p class="description"> 3. Identify signal words and phrases. </p>
+            <p class="description"> 4. Use process of elimination </p>
+            <p class="description"> 5. Read through the passage once you've chosen the answer. </p>
+
+            <button type="button" class="next-page" id="next-page-begin"> Begin!</button>
+
+        </div>
+
+        <div class="test-container hideonload" id="question-display">
+            <p class="question" id="clock">00:00</p>
+            <p class="question" id="practice-question"></p>
+
+            <p class="question" id="practice-question-1"></p>
+
+            <form class="answers" id="set-1">
+
+                <input type="radio" class="answer" id="Aradio" name="set1" value="A">
+                <label class="answerval" id="A" for="Aradio" value=""> </label> 
+                 <br>
+
+                <input type="radio" class="answer" id="Bradio" name="set1" value="B">
+                <label class="answerval" id="B" for="Bradio" value=""> </label>
+                <br>
+
+                <input type="radio" class="answer" id="Cradio" name="set1" value="C">
+                <label class="answerval" id="C" for="Cradio" value=""> </label> 
+                <br>
+
+                <input type="radio" class="answer" id="Dradio" name="set1" value="D">
+                <label class="answerval" id="D" for="Dradio" value=""> </label> 
+                <br>
+
+                <input type="radio" class="answer" id="Eradio" name="set1" value="E">
+                <label class="answerval" id="E" for="Eradio" value=""> </label> 
+                <br>
+
+            </form>
+            <button type="submit" class="submit-button" id="next-question" disabled> Next </button>
+            </div>
+
+          
+
+        
+        <div class="test-container hideonload" id="question-result-display">
+
+
+            <p class="result"></p>
+            <p class="correctanswer"></p>
+
+        </div>
+
+        <div class="test-container hideonload" id="test-result-display">
+
+
+            <h2 class="title"> Final Score!</h2>
+            <p>
+            <span id="finalscorenumber"></span>
+            <span>out of </span>
+            <span id="numofquestions"> </span>
+                </p>
+            <p>Time Taken:<span id="timetaken"> </span> </p>
+
+            <h3 class="title">Save your score and send it to your email!</h3>
+
+            <div>
+              <form>
+                <label for="fname">Your Nick Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Write your first name..">
+            
+                <label for="email">Email</label>
+                <input type="text" id="email" name="lastname" placeholder="example@email.com..">
+            
+                <label for="publicboard">Post to Public Scoreboard?</label>
+                <select id="publicboard" name="publicboard">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              
+                <button type="button" id="send-score"> Send My Score!</button>
+              </form>
+            </div>        
+
+
+
+
+
+
+
+
+            <button type="button" class="playagain" id="refresh" onclick="window.location.href = '/readingcomprehensionquizpractice';">
+                Play Again!</button>
+                <button type="button" class="playagain" id="go-home" onclick="window.location.href = '/';">
+                    Back to Home</button>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <!-- CHAT -->
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    $(".hideonload").hide();
+
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
