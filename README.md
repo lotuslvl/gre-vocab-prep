@@ -1,4 +1,4 @@
-##Prepi
+## Prepi
 
 ![kido](https://user-images.githubusercontent.com/45444261/66151453-f6576800-e5dc-11e9-9292-2652b2add77a.jpg);
 
@@ -30,7 +30,7 @@ API Wrangler and Network Dev
 
 
 
-##Photos
+## Photos
 
 
 ![20191005_095737](https://user-images.githubusercontent.com/45444261/66256886-5d4d5c00-e758-11e9-8550-d5f0add6ff85.jpg);
