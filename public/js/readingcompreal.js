@@ -259,7 +259,7 @@ function startTimer(duration, display) {
 
     //these are showing entry screens before the questions begin
     $("#next-page-okay").on("click",function() {
-        showWhatToExpect();
+        showQuestion(); 
     });
 
     $("#next-page-gotit").on("click",function() {
