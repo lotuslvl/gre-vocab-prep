@@ -26,6 +26,19 @@ module.exports = function (app) {
     });
   });
 
+// GET route for getting all of the questions
+app.get("/api/readingcompq", function(req, res) {
+  // findAll returns all entries for a table when used with no options
+  db.ReadingComprehensionQ .findAll({
+    order: Sequelize.literal('rand()'),
+    limit: 10,
+
+  }).then(function(readingcompdb) {
+    // We have access to the todos as an argument inside of the callback function
+    
+    res.json(readingcompdb);
+  });
+});
 
   app.get("/api/login", function (req, res) {
     db.Player.findAll({

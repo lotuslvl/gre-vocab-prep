@@ -39,7 +39,7 @@ module.exports = function(app) {
 
   // sends to real text completion quiz
   app.get("/readingcomprehensionreal", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/readingcomprehensionreal.html"));
+    res.sendFile(path.join(__dirname, "../public/readingcomprehensionquizreal.html"));
   });
 
 
