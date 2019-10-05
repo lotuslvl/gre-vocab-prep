@@ -224,7 +224,6 @@ function startTimer(duration, display) {
           data: newScore,
         }).then(
           function() {
-            console.log("sent score to scoreboard");
           }
         );
          }

@@ -256,7 +256,7 @@ function startTimer(duration, display) {
      data: newScore,
    }).then(
      function() {
-       console.log("sent score to scoreboard");
+
      }
    );
     }
@@ -318,7 +318,7 @@ function addLocalStorage()
      
   }
   else {
-    console.log("still have questions to answer")
+    alert("Answer the questio to continue.")
   }
  });
 

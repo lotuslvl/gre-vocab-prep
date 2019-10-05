@@ -12,7 +12,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="js/scoreboard.js"></script> 
-        <link rel="stylesheet" href="css/indexstyles.css" type="text/css" />
+        <link rel="stylesheet" href="css/scoreboardstyles.css" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap"
 		rel="stylesheet">
 
@@ -45,8 +45,22 @@
 
     <div class="score-section">
 
-        <h2 class="section-title">Top Scores for Text Completion</h2>
+       
+        <h2 class="section-title">Top Score This Week</h2>
+        <div class="card text-center">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Top Score</h5>
+                  <p class="card-text"><span id="highest"></span> by <span id="namehighest"></span></p>
+                </div>
+              </div>
+             
 
+        <h2 class="section-title">Recent Top Scores</h2>
         <div class="row">
 
             <div class="col-md-12">
@@ -59,6 +73,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Test Type</th>
                                     <th scope="col">Score</th>
                                     <th scope="col">Time</th>
 

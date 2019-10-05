@@ -12,7 +12,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="js/dashboard.js"></script> 
-        <link rel="stylesheet" href="css/indexstyles.css" type="text/css" />
+        <link rel="stylesheet" href="css/dashboardstyles.css" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Krub:300,400,400i,600,700|Questrial|Reenie+Beanie&display=swap"
 		rel="stylesheet">
 
@@ -42,43 +42,34 @@
                 </div>
             </div>
 
-
-
     <div class="score-section">
-
         <h2 class="section-title">Welcome <span id="username"></span>!</h2>
-        <h4>Available Tests</h4> <br>
+        <h3>Available Tests</h3> <br>
 
-        <div class="cards">
+        <div class="row toprow">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Text Completion</h4>
+              <p class="card-text">Text completion questions account for about one quarter of the marks for the verbal section of GRE. Each question contains one, two or three blanks, and you have to find the best answers to make the text make complete sense. Be sure to study the text carefully so that you notice all the in-built clues.</p>
+              <a href="/textcompletionquizreal" class="btn btn-primary">Take Test</a>
+              <a href="/textcompletionquizpractice" class="btn btn-secondary">Practice</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Reading Comprehension</h4>
+              <p class="card-text">Each Reading Comprehension question is based on a passage that may range in length from one paragraph to several paragraphs. The test contains approximately 10 passages, the majority of which are one paragraph in length and only one or two of which are several paragraphs long. </p>
+              <a href="/readingcomprehensionreal" class="btn btn-primary">Take Test</a>
+              <a href="/readingcomprehensionquizpractic" class="btn btn-secondary">Practice</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                <div class="card newcard" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">Text Completion</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">20 minutes</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="/textcompletionquizpractice" class="card-link">Practice</a>
-                          <a href="/textcompletionquizreal" class="card-link">Compete</a>
-                        </div>
-                      </div>
-    
-                      <div class="card newcard" style="width: 18rem;">
-                            <div class="card-body">
-                              <h5 class="card-title">Reading Comprehension</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">20 minutes</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="/readingcomprehensionquizpractice" class="card-link">Practice</a>
-                              <a href="/readingcomprehensionreal" class="card-link">Compete</a>
-                            </div>
-                          </div>
-    
-    
-    
-    
-        </div><br>
-
-
-
-        <h4>Your Test Score History</h4>
+        <h3>Your Test Score History</h3>
         <div class="row">
 
             <div class="col-md-12">
@@ -104,8 +95,8 @@
             </div>
         </div>
 
-    </div>
-
+   
+</div>
 
 
 </body>

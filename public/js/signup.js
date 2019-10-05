@@ -24,7 +24,7 @@ $(document).ready(function () {
       gre_test_date: ''
     })
       .done(function (data) {
-        window.location.href = "/scoreboard";
+        window.location.href = "/mydashboard";
       });
   });
 })
