@@ -299,6 +299,10 @@
 </html>
 
 <script>
+    var apiKey;
+    $.get('/api/getApiKey', function(data) {
+        apiKey = data.apiKey;
+    });
 
     $(".hideonload").hide()
 
@@ -307,7 +311,7 @@
             var currentValue = $(this).text();
             $.ajax({
                 type: "GET",
-                url: "http://api.wordnik.com/v4/word.json/" + currentValue + "/definitions?api_key=zb8xgmao0hgd9buayof0cvwi30v66g6ejz1mwarlxizadjq3v"
+                url: "http://api.wordnik.com/v4/word.json/" + currentValue + "/definitions?api_key=" + apiKey
             }).done(function (response) {
                 $(".tooltiptext").text(response[1].text);
 
