@@ -297,43 +297,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
-    $(function () {
-        var socket = io();
-        $('form').submit(function (e) {
-            e.preventDefault(); // prevents page reloading
-            $('#feedback').val('');
-
-            if ($('#message').val()) {
-                socket.emit('chat message', {
-                    message: $('#message').val(),
-                    nickname: $('#nickname').val()
-                });
-                $('#message').val('');
-                return false;
-            }
-        });
-
-        $('#message').keypress(function () {
-            socket.emit('typing', $('#nickname').val());
-        });
-
-
-        socket.on('chat message', function (msg) {
-
-            $('#messages').append($('<li>').html('<strong>' + msg.nickname + '</strong>' + ': ' + msg.message));
-            // var messages = document.getElementById('messages');
-            // messages.innerHTML += '<p><strong>' + data.nickname + ':</strong>' + data.message + '</p>'
-        });
-        var typingTimer;
-        socket.on('typing', function (data) {
-            // $('#feedback').append($('<li>').html('<strong>' + data + '</strong>'));
-            clearTimeout(typingTimer);
-            $('#feedback').append($('<div>').html('<p><em>' + data + ' is typing ...' + '</em></p>'));
-            typingTimer = setTimeout(function () {
-                $('#feedback').empty();
-            }, 2000);
-        });
-    });
+   http://localhost:8080/textcompletionquizpractice
      // Make the DIV element draggable:
      dragElement(document.getElementById("myForm"));
 
