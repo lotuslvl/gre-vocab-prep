@@ -54,7 +54,12 @@ module.exports = function(app) {
   });
 
   app.get("/admin", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/admin.html"));ut
+    res.sendFile(path.join(__dirname, "../public/admin.html"));
+  });
+
+  
+  app.get("/mydashboard", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/playerdashboard.html"));
   });
 
 };

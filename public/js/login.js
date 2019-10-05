@@ -1,5 +1,8 @@
 
 $(document).ready(function () {
+
+    var user=localStorage.getItem("username");
+
     $('#btnLogin').click(function () {
 
         var usernameValue = document.getElementById("username").value;
@@ -9,7 +12,26 @@ $(document).ready(function () {
             .done(function (data) {
                 //window.location.href = "/playerdashboard";
                 console.log(JSON.stringify(data));
-                localStorage.setItem(data.name, data.email, data.username);
             });
+
+           
+
+                localStorage.setItem("username",usernameValue);
+           
     });
+
+    if(user){
+        
+
+
+    }
+
+    else {
+
+
+
+    }
+
+
+
 })

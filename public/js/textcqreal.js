@@ -210,6 +210,7 @@ function startTimer(duration, display) {
      numright=score;
      numwrong=outof-score;
      showFinalResult();
+     addLocalStorage();
  }
 
 
@@ -260,7 +261,8 @@ function startTimer(duration, display) {
    );
     }
 
-    localStorage.setItem(newScore.type, newScore.percentage, newScore.timetaken);
+  
+    
  }
 
    //added an EMAIL endpoint with newScore object data 
@@ -276,7 +278,27 @@ function startTimer(duration, display) {
     });
 }
 
+function addLocalStorage()
+{       
+    var testdata=["TextCompletion",scorepercentage,((20-parseFloat(timetaken.replace(":", ".")))-.4)]
+    var localData=localStorage.getItem("testdata");
+    //checking to see if data exists in local storage already
+    if(localData==undefined ||localData==null ){
 
+        //if there isn't anything then push testdata
+    localStorage.setItem("testdata", testdata);
+
+    }
+
+    else{
+
+        //if there is data in local storage then add new data on top of it.
+        var combineddata=testdata.join()+","+localData;
+        localStorage.setItem("testdata", combineddata);
+
+    }
+
+}
    //start app  
    getTextCompletionQuestions();
    showStartScreen();
