@@ -1,38 +1,30 @@
 
-
-
-$(document).ready(function(){
-
-    var scores=[];
-    var getLocalData=localStorage.getItem("testdata");
-
-    console.log(getLocalData);
+$(document).ready(function () {
     
-    //split by comma name percentage timetaken
-    
-    //get scores
-function displayScores (){
- 
+    function getUserData(){
+        var userData = localStorage.getItem("testdata").split(',');
+        return userData;
+    }
 
-      // / // Create the new row
-      for(var i = 0; i < scores.length; i++){
-        var newUser = $("<tr>").append(
-          $("<td>").text(scores[i].name),
-          $("<td>").text(scores[i].percentage+" %"),
-          $("<td>").text(scores[i].timetaken+" minutes")   )
-        
-          // Append the new row to the table
-          $("#user-table > tbody").append(newUser);
+    //get data
+    function displayUserData() {
+        var data = getUserData();
 
-      };
+        // / // Create the new row
+        for (var i = 0; i < data.length-2; i += 3) {
 
+            var newUser = $("<tr>").append(
+                $("<td>").text(data[i]),
+                $("<td>").text(data[i+1].substring(0, data.length -1) + " %"),
+                $("<td>").text(data[i+2].substring(0, data.length) + " minutes"))
 
+            // Append the new row to the table
+            $("#user-table > tbody").append(newUser);
 
+        };
 
+    }
 
-
-}
-
-displayScores();
+    displayUserData();
 
 });
