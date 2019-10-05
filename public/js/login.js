@@ -15,7 +15,18 @@ $(document).ready(function () {
                 //window.location.href = "/playerdashboard";
                 console.log(JSON.stringify(data));
                 
+                if(user){
 
+                    document.location.href = "/mydashboard";
+                    
+            
+            
+                }
+
+                else{
+
+                    alert("Your account was not found. Try again.");
+                }
 
             });
 
@@ -27,18 +38,13 @@ $(document).ready(function () {
 
     if(user){
 
-
+        document.location.href = "/mydashboard";
         
 
 
     }
 
-    else {
-
-
-
-    }
-
+  
 
 
 })

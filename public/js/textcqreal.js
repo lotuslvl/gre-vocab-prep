@@ -280,7 +280,7 @@ function startTimer(duration, display) {
 
 function addLocalStorage()
 {       
-    var testdata=["TextCompletion",scorepercentage,((20-parseFloat(timetaken.replace(":", ".")))-.4)]
+    var testdata=["Text Completion",scorepercentage,((20-parseFloat(timetaken.replace(":", ".")))-.4)]
     var localData=localStorage.getItem("testdata");
     //checking to see if data exists in local storage already
     if(localData==undefined ||localData==null ){

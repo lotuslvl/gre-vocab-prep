@@ -26,5 +26,5 @@ $(document).ready(function () {
     }
 
     displayUserData();
-
+    $("#username").text(localStorage.getItem("username"));
 });

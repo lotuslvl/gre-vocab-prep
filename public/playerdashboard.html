@@ -28,16 +28,14 @@
 </style>
 
 <body>
-
+    
     
 		<div class="header">
 
-                <a href="/admin" class="logo">Preppi</a>
+                <a href="/admin" class="logo">Prepi</a>
                 <div class="header-right">
         
                 <a href="/">Home</a>
-                <a href="/textcompletionquizpractice">Practice</a>
-                <a href="/textcompletionquizreal">Compete</a>
                 <a href="/scoreboard">Leaderboard</a>
                 <a class="active" href="/login">My Dashboard</a>
         
@@ -45,10 +43,42 @@
             </div>
 
 
+
     <div class="score-section">
 
-        <h2 class="section-title">Your Scores</h2>
+        <h2 class="section-title">Welcome <span id="username"></span>!</h2>
+        <h4>Available Tests</h4> <br>
 
+        <div class="cards">
+
+                <div class="card newcard" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Text Completion</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">20 minutes</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="/textcompletionquizpractice" class="card-link">Practice</a>
+                          <a href="/textcompletionquizreal" class="card-link">Compete</a>
+                        </div>
+                      </div>
+    
+                      <div class="card newcard" style="width: 18rem;">
+                            <div class="card-body">
+                              <h5 class="card-title">Reading Comprehension</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">20 minutes</h6>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="/readingcomprehensionquizpractice" class="card-link">Practice</a>
+                              <a href="/readingcomprehensionreal" class="card-link">Compete</a>
+                            </div>
+                          </div>
+    
+    
+    
+    
+        </div><br>
+
+
+
+        <h4>Your Test Score History</h4>
         <div class="row">
 
             <div class="col-md-12">
